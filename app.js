@@ -1,7 +1,7 @@
 //Importing required modules
 require("dotenv").config();
 const express = require("express");
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 const router = require("./routes/router");
 
 //Initializing the app
