@@ -1,6 +1,32 @@
-<%- include('index/header'); -%>
-    <header>
-        <h1>hello world</h1>
-    </header>
+<!DOCTYPE html>
+<html lang="en">
 
-    <%- include('partials/footer'); -%>
+<%= include('partials/head') %>
+
+<body>
+    <%= include('partials/nav') %>
+    
+    <h1>Dashboard</h1>
+    <a href="/create-offer">Create a new job</a>
+
+    <form>
+        <label for="filter">Filter by :</label>
+        <select name="filter" id="filter">
+            <option value="status">Status</option>
+            <option value="date">Date</option>
+        </select>
+
+        <label for="order">Order :</label>
+        <select name="order" id="order">
+            <option value="asc">Asc.</option>
+            <option value="dsc">Dsc.</option>
+        </select>
+    </form>
+
+    <div class="dashboard-grid">
+
+    </div>
+
+    <%= include('partials/footer') %>
+</body>
+</html>
