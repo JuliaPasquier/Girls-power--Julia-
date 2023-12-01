@@ -5,14 +5,16 @@ const PORT = process.env.PORT || 3001;
 const router = require("./routes/router");
 const mongoose = require("mongoose");
 
-const DbUri = process.env.DB_URI;
+const  DbUri = process.env.MONGODB_URI || process.env.DB_URI;
 
 //Initializing the app
 const app = express();
 
 //Middleware
 app.use(express.json());
-app.use(express.static("public"));
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "public"));
 
 //View engine
 
