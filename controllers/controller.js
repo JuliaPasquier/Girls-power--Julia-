@@ -28,14 +28,14 @@ module.exports.profile_get = (req, res) => {
 };
 
 module.exports.create_get = (req, res) => {
-    res.send("create-offer");
+    res.render("create-offer");
 };
 
 module.exports.create_post = (req, res) => {
     res.send("successfully added a new offer");
 };
 
-module.exports.edit_get = (req, res) => {
+module.exports.update_get = (req, res) => {
     res.render("update-offer");
 };
 
