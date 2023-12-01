@@ -28,6 +28,9 @@ mongoose
 
 //Routes
 app.use(router);
+
+module.exports = app;
+
 //app.get("*", checkUser);
 
 //Cookies
