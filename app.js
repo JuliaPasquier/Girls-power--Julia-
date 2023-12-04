@@ -1,10 +1,12 @@
 //Importing required modules
 require("dotenv").config();
+
 const express = require("express");
+const mongoose = require("mongoose");
+
 const PORT = process.env.PORT || 3001;
 const router = require("./routes/router");
-const cookieParser = require("cookie-parser");
-const mongoose = require("mongoose");
+const { checkUser } = require("../middleware/authMiddleware");
 
 const DbUri = process.env.MONGODB_URI || process.env.DB_URI;
 
@@ -13,12 +15,12 @@ const app = express();
 
 //Middleware
 app.use(express.json());
-app.set("views", __dirname + "/views");
-app.set("view engine", "ejs");
-app.use(express.static(__dirname + "public"));
 app.use(cookieParser());
 
 //View engine
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
 
 //DB connection
 mongoose
@@ -32,9 +34,8 @@ mongoose
 
 //Routes
 app.use(router);
+app.get("*", checkUser);
 
+// Required export for Vercel  
 module.exports = app;
 
-//app.get("*", checkUser);
-
-//Cookies

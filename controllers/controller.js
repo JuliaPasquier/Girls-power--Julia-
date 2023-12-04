@@ -5,6 +5,13 @@ const jwt = require("jsonwebtoken");
 const secret = process.env.JWT_SECRET;
 const maxAge = process.env.MAX_AGE;
 
+// create token
+const createToken = (id) => {
+    return jwt.sign({ id }, secret, {
+        expiresIn: maxAge
+    });
+};
+
 // handle errors
 const handleErrors = (err) => {
 	console.log(err.message, err.code);
@@ -37,14 +44,6 @@ const handleErrors = (err) => {
 	return errors;
 };
 
-// create token
-const createToken = (id) => {
-	return jwt.sign({ id }, secret, {
-		expiresIn: maxAge
-	});
-};
-
-
 //Controller actions
 module.exports.dashboard_get = (req, res) => {
     res.render("index");
@@ -59,24 +58,38 @@ module.exports.login_get = (req, res) => {
 };
 
 module.exports.signup_post = async (req, res) => {
-    const { firstName, lastName, email, github, profilePicture, resume, password } = req.body;
+    const { firstName, 
+        lastName, 
+        email, 
+        github, 
+        profilePicture, 
+        resume, 
+        password } = req.body;
 	try {
-		const user = await User.create({ firstName, lastName, email, github, profilePicture, resume, password });
+		const user = await User.create({ 
+            firstName, 
+            lastName, 
+            email, 
+            github, 
+            profilePicture, 
+            resume, 
+            password });
 		const token = createToken(user._id);
 		res.cookie("jwt", token, {
 			maxAge: maxAge * 1000,
-			httpOnly: true,
+			httpOnly: true
 		});
 		res.status(201).json({ user: user._id });
 	} catch (err) {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });
 	}
-    //res.send("user created");
 };
 
 module.exports.login_post = async (req, res) => {
-    const { email, password } = req.body;
+    const { 
+        email, 
+        password } = req.body;
 	try {
 		const user = await User.login(email, password);
 		const token = createToken(user._id);
@@ -89,11 +102,11 @@ module.exports.login_post = async (req, res) => {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });
 	}
-   //res.send("login request sent");
 };
 
 module.exports.logout_get = (req, res) => {
-    res.render("login");
+    res.cookie("jwt", "", { maxAge: 1 });
+    res.redirect("/login");
 };
 
 module.exports.profile_get = (req, res) => {
