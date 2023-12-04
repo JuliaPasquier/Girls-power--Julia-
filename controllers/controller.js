@@ -59,9 +59,9 @@ module.exports.login_get = (req, res) => {
 };
 
 module.exports.signup_post = async (req, res) => {
-    const { email, password } = req.body;
+    const { firstName, lastName, email, github, profilePicture, resume, password } = req.body;
 	try {
-		const user = await User.create({ email, password });
+		const user = await User.create({ firstName, lastName, email, github, profilePicture, resume, password });
 		const token = createToken(user._id);
 		res.cookie("jwt", token, {
 			maxAge: maxAge * 1000,
@@ -72,7 +72,7 @@ module.exports.signup_post = async (req, res) => {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });
 	}
-    //res.send("signup request sent");
+    //res.send("user created");
 };
 
 module.exports.login_post = async (req, res) => {
