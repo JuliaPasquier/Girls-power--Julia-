@@ -57,7 +57,11 @@ const offerSchema = new mongoose.Schema({
 	comments: {
 		type: String,
 	},
-	// User ID ?
+	author: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'User',
+		required: true
+	}
 });
 
 const Offer = mongoose.model("offer", offerSchema);

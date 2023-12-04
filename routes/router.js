@@ -22,8 +22,8 @@ router.get("/logout", controller.logout_get);
 router.get("/profile",  controller.profile_get);
 
 // Create
-router.get("/create", controller.create_get);
-router.post("/create", controller.create_post);
+router.get("/create", requireAuth, controller.create_get);
+router.post("/create", requireAuth, controller.create_post);
 
 // Update
 router.get("/update", controller.update_get);
