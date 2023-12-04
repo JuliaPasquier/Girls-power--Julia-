@@ -22,7 +22,7 @@ router.get("/logout", controller.logout_get);
 router.get("/profile", requireAuth, controller.profile_get);
 
 // Create
-router.get("/create", requireAuth,controller.create_get);
+router.get("/create", requireAuth, controller.create_get);
 router.post("/create", requireAuth, controller.create_post);
 
 // Update

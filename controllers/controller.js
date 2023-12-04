@@ -117,8 +117,33 @@ module.exports.create_get = (req, res) => {
     res.render("create-offer");
 };
 
-module.exports.create_post = (req, res) => {
-    res.send("successfully added a new offer");
+module.exports.create_post = async (req, res) => {
+    const { 
+        jobTible, 
+        url, 
+        employer, 
+        offerOrigin, 
+        offerStatus, 
+        comments } = req.body;
+
+    const userId = req.user._id;
+
+	try {
+		const newOffer = await Offer.create({ 
+                jobTible, 
+                url, 
+                employer, 
+                offerOrigin, 
+                offerStatus, 
+                comments,
+                author: userId  });
+		
+		res.status(201).json({ offer: newOffer._id });
+        res.redirect("/");
+	} catch (err) {
+		const errors = handleErrors(err);
+		res.status(400).json({ errors });
+	}
 };
 
 module.exports.update_get = (req, res) => {
