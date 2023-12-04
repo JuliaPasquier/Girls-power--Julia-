@@ -1,6 +1,7 @@
 // imports
 require('dotenv').config();
 const User = require("../models/User");
+const Offer = require("../models/Offer");
 const jwt = require("jsonwebtoken");
 const secret = process.env.JWT_SECRET;
 const maxAge = process.env.MAX_AGE;
