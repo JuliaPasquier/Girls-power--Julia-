@@ -3,9 +3,10 @@ require("dotenv").config();
 const express = require("express");
 const PORT = process.env.PORT || 3001;
 const router = require("./routes/router");
+const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 
-const  DbUri = process.env.MONGODB_URI || process.env.DB_URI;
+const DbUri = process.env.MONGODB_URI || process.env.DB_URI;
 
 //Initializing the app
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.json());
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "public"));
+app.use(cookieParser());
 
 //View engine
 
