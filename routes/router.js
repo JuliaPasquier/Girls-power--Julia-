@@ -5,21 +5,21 @@ const { requireAuth } = require("../middleware/authMiddleware");
 const router = Router();
 
 // General
-router.get("/", controller.dashboard_get);
-
-// Register
-router.get("/register", controller.register_get);
-router.post("/register", controller.register_post);
+router.get("/", requireAuth, controller.dashboard_get);
 
 // Login
 router.get("/login", controller.login_get);
 router.post("/login", controller.login_post);
 
+// Register
+router.get("/register", controller.register_get);
+router.post("/register", controller.register_post);
+
 // Logout
 router.get("/logout", controller.logout_get);
 
 // Profile
-router.get("/profile",  controller.profile_get);
+router.get("/profile", requireAuth, controller.profile_get);
 
 // Create
 router.get("/create", requireAuth, controller.create_get);

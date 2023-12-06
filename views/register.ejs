@@ -1,8 +1,8 @@
 <%- include('partials/header'); -%>
 
-    <form>
+    <form method="POST">
         <h2>Register</h2>
-        
+
         <label for="firstname">firstname</label>
         <input type="text" name="firstname" required />
 
@@ -22,38 +22,50 @@
         <input type="text" name="CV" required />
 
         <label for="password">password</label>
-        <input type="text" name="password" required />
-        
-        <label for="repeatPassword">password</label>
-        <input type="text" name="repeatPassword" required />
+        <input type="password" name="password" required />
 
-        <button>Register</button>
+        <label for="repeatPassword"> repeat password</label>
+        <input type="password" name="repeatPassword" required />
+
+        <button type="submit">Register</button>
     </form>
 
     <script>
         const form = document.querySelector('form');
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-
+            console.log("Submit post");
+            const firstName = form.firstname.value;
+            const lastName = form.lastname.value;
             const email = form.email.value;
+            const github = form.github.value;
+            const profilPicture = form.profilPicture.value;
+            const resume = form.CV.value;
             const password = form.password.value;
-            console.log(email, password);
+            const repeatPassword = form.repeatPassword.value;
+
 
             try {
-                const res = await fetch("/signup", {
+                const res = await fetch("/register", {
                     method: "POST",
-                    body: JSON.stringify({ email, password }),
-                    headers: { "Content-Type": "application/json" }
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ firstName, lastName, email, github, profilPicture, resume, password }),
+
                 });
                 const data = await
 
                     res.json()
+                if (res.status === 201) {
+                    window.location.href = "/login";
+                }
             }
             catch (err) {
                 console.log(err);
 
             }
         })
+        // form.submit();
+        form.dispatchEvent(new Event('submit'));
     </script>
 
     <%- include('partials/footer'); -%>

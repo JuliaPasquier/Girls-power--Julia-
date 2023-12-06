@@ -61,6 +61,7 @@ module.exports.login_get = (req, res) => {
 };
 
 module.exports.register_post = async (req, res) => {
+	console.log("Register Post")
     const { firstName, 
         lastName, 
         email, 

@@ -25,14 +25,17 @@ const userSchema = new mongoose.Schema({
 	},
 	github: {
 		type: String,
+		required: false,
 		trim: true,
 	},
 	profilePicture: {
 		type: String,
+		required: false,
 		trim: true,
 	},
 	resume: {
 		type: String,
+		required: false,
 		trim: true,
 	},
 	password: {
