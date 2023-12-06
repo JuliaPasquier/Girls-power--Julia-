@@ -26,7 +26,7 @@ router.get("/create", requireAuth, controller.create_get);
 router.post("/create", requireAuth, controller.create_post);
 
 // Update
-router.get("/update", controller.update_get);
-router.put("/update", controller.update_put);
+router.get("/update/:id", requireAuth, controller.update_get);
+router.put("/update/:id", requireAuth, controller.update_put);
 
 module.exports = router;

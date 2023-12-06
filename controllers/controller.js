@@ -151,6 +151,37 @@ module.exports.update_get = (req, res) => {
     res.render("update-offer");
 };
 
-module.exports.update_put = (req, res) => {
-    res.send("successfully updated offer");
+module.exports.update_put = async (req, res) => {
+    const offerId = req.params.id;
+	console.log(offerId);
+	
+	const { 
+		jobTitle, 
+		url, 
+		employer, 
+		offerOrigin, 
+		offerStatus, 
+		comments } = req.body;
+	
+	try {
+		const updatedOffer = await Offer.updateOne(
+			{ _id: offerId }, 
+			{ $set:
+				{ 
+					updatedAt: Date.now(),
+					jobTitle, 
+					url, 
+					employer, 
+					offerOrigin, 
+					offerStatus, 
+					comments 
+				}
+			}
+		); 
+		res.status(201).json({ offer: updatedOffer._id });
+	}
+	catch (err) {
+		const errors = handleErrors(err);
+		res.status(400).json({ errors });
+	}
 };
