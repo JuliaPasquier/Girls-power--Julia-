@@ -65,4 +65,5 @@ const offerSchema = new mongoose.Schema({
 });
 
 const Offer = mongoose.model("offer", offerSchema);
+
 module.exports = Offer;

@@ -119,19 +119,19 @@ module.exports.create_get = (req, res) => {
 };
 
 module.exports.create_post = async (req, res) => {
-    const { 
-        jobTible, 
+	const userId = req.user._id;
+    
+	const { 
+        jobTitle, 
         url, 
         employer, 
         offerOrigin, 
         offerStatus, 
         comments } = req.body;
 
-    const userId = req.user._id;
-
 	try {
 		const newOffer = await Offer.create({ 
-                jobTible, 
+                jobTitle, 
                 url, 
                 employer, 
                 offerOrigin, 
