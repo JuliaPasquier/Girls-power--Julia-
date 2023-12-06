@@ -1,29 +1,28 @@
 const mongoose = require("mongoose");
 const { isEmail } = require("validator");
 
-const employerSchema = new mongoose.Schema({
-	name: {
-		type: String,
-		required: true,
-		trim: true,
-	},
-	email: {
-		type: String,
-		required: [true, "Please enter your email"],
-		unique: true,
-		lowercase: true,
-		validate: [isEmail, "Please enter a valid email"],
-		trim: true,
-	},
-	phone: {
-		type: String,
-		trim: true,
-	},
-	address: {
-		type: String,
-		trim: true,
-	},
-});
+// const employerSchema = new mongoose.Schema({
+// 	name: {
+// 		type: String,
+// 		required: true,
+// 		trim: true,
+// 	},
+// 	employerEmail: {
+// 		type: String,
+// 		required: [true, "Please enter your email"],
+// 		lowercase: true,
+// 		validate: [isEmail, "Please enter a valid email"],
+// 		trim: true,
+// 	},
+// 	phone: {
+// 		type: String,
+// 		trim: true,
+// 	},
+// 	address: {
+// 		type: String,
+// 		trim: true,
+// 	},
+// });
 
 const offerSchema = new mongoose.Schema({
 	createdAt: {
@@ -45,7 +44,28 @@ const offerSchema = new mongoose.Schema({
 		required: true,
 		trim: true,
 	},
-	employer: employerSchema,
+	employer: {
+		name: {
+			type: String,
+			required: true,
+			trim: true,
+		},
+		employerEmail: {
+			type: String,
+			required: [true, "Please enter your email"],
+			lowercase: true,
+			validate: [isEmail, "Please enter a valid email"],
+			trim: true,
+		},
+		phone: {
+			type: String,
+			trim: true,
+		},
+		address: {
+			type: String,
+			trim: true,
+		}
+	},
 	offerOrigin: {
 		type: String,
 		required: true,
@@ -58,9 +78,7 @@ const offerSchema = new mongoose.Schema({
 		type: String,
 	},
 	author: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'User',
-		required: true
+		type: Object,
 	}
 });
 

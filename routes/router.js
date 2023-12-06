@@ -8,8 +8,8 @@ const router = Router();
 router.get("/", controller.dashboard_get);
 
 // Register
-router.get("/signup", controller.signup_get);
-router.post("/signup", controller.signup_post);
+router.get("/register", controller.register_get);
+router.post("/register", controller.register_post);
 
 // Login
 router.get("/login", controller.login_get);

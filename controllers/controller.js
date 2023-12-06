@@ -6,6 +6,8 @@ const jwt = require("jsonwebtoken");
 const secret = process.env.JWT_SECRET;
 const maxAge = process.env.MAX_AGE;
 
+let currentUserId;
+
 // create token
 const createToken = (id) => {
     return jwt.sign({ id }, secret, {
@@ -50,7 +52,7 @@ module.exports.dashboard_get = (req, res) => {
     res.render("index");
 };
 
-module.exports.signup_get = (req, res) => {
+module.exports.register_get = (req, res) => {
     res.render("register");
 };
 
@@ -58,7 +60,7 @@ module.exports.login_get = (req, res) => {
     res.render("login");
 };
 
-module.exports.signup_post = async (req, res) => {
+module.exports.register_post = async (req, res) => {
     const { firstName, 
         lastName, 
         email, 
@@ -88,17 +90,18 @@ module.exports.signup_post = async (req, res) => {
 };
 
 module.exports.login_post = async (req, res) => {
-    const { 
-        email, 
+	const { 
+		email, 
         password } = req.body;
-	try {
-		const user = await User.login(email, password);
-		const token = createToken(user._id);
-		res.cookie("jwt", token, {
-			maxAge: maxAge * 1000,
-			httpOnly: true,
-		});
-		res.status(200).json({ user: user._id });
+		try {
+			const user = await User.login(email, password);
+			const token = createToken(user._id);
+			res.cookie("jwt", token, {
+				maxAge: maxAge * 1000,
+				httpOnly: true,
+			});
+			currentUserId = user._id;
+			res.status(200).json({ user: user._id });
 	} catch (err) {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });
@@ -119,8 +122,6 @@ module.exports.create_get = (req, res) => {
 };
 
 module.exports.create_post = async (req, res) => {
-	const userId = req.user._id;
-    
 	const { 
         jobTitle, 
         url, 
@@ -137,7 +138,7 @@ module.exports.create_post = async (req, res) => {
                 offerOrigin, 
                 offerStatus, 
                 comments,
-                author: userId  });
+                author: currentUserId });
 		
 		res.status(201).json({ offer: newOffer._id });
         res.redirect("/");
