@@ -1,28 +1,27 @@
-<%= include('partials/header') %>
+<%- include('partials/header') %>
 
-<body>
-    <%= include('partials/nav') %>
-    
-    <h1>Dashboard</h1>
-    <a href="/create-offer">Create a new job</a>
 
-    <form>
-        <label for="filter">Filter by</label>
-        <select name="filter" id="filter">
-            <option value="status">Status</option>
-            <option value="date">Date</option>
-        </select>
+    <%- include('partials/nav') %>
 
-        <label for="order">Order</label>
-        <select name="order" id="order">
-            <option value="asc">Asc.</option>
-            <option value="dsc">Dsc.</option>
-        </select>
-    </form>
+        <h1>Dashboard</h1>
+        <a href="/create-offer">Create a new job</a>
 
-    <div class="dashboard-grid">
+        <form>
+            <label for="filter">Filter by</label>
+            <select name="filter" id="filter">
+                <option value="status">Status</option>
+                <option value="date">Date</option>
+            </select>
 
-    </div>
+            <label for="order">Order</label>
+            <select name="order" id="order">
+                <option value="asc">Asc.</option>
+                <option value="dsc">Dsc.</option>
+            </select>
+        </form>
 
-    <%= include('partials/footer') %>
-</body>
+        <div class="dashboard-grid">
+
+        </div>
+
+        <%- include('partials/footer') %>

@@ -1,33 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/header') %>
 
-<%= include('partials/header') %>
 
-    <body>
-        <%= include('partials/nav') %>
+    <%- include('partials/nav') %>
 
-            <h1>My profile</h1>
+        <h1>My profile</h1>
 
-            <div class="profil">
-                <div class="picture"></div>
-                <div class="info">
-                    <div class="full-name">Full name</div>
-                    <div class="email">Email</div>
-                    <div class="github">GitHub</div>
-                </div>
+        <div class="profil">
+            <div class="picture"></div>
+            <div class="info">
+                <div class="full-name">Full name</div>
+                <div class="email">Email</div>
+                <div class="github">GitHub</div>
             </div>
-            <div class="buttons">
-                <div class="dl_cv">
+        </div>
+        <div class="buttons">
+            <div class="dl_cv">
 
-                </div>
-                <div class="update_cv">
-
-                </div>
-                <div class="change_password">
-                </div>
             </div>
+            <div class="update_cv">
 
-            <%= include('partials/footer') %>
-    </body>
+            </div>
+            <div class="change_password">
+            </div>
+        </div>
 
-</html>
+        <%- include('partials/footer') %>
