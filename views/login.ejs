@@ -1,22 +1,22 @@
 <%- include('partials/header'); -%>
 
-    <form>
-        <h2>login</h2>
+    <form class="container"  method="post">
+        <h2 class="title">login</h2>
 
         <label for="email">Email</label>
-        <input type="text" name="email" required />
+        <input type="text" name="email" id="email"></input>
         <div class="email error"></div>
 
-        <label for="passord">Password</label>
-        <input type="password" name="password" required></input>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"></input>
         <div class="password error"></div>
 
-        <a class="login" href="/">login</a>
+        <button>login</button>
         <a class="register" href="/register">register</a>
     </form>
 
     <%- include('partials/footer'); -%>
-
+<!-- 
         <script>
             const form = document.querySelector('form');
             form.addEventListener('submit', (e) => {
@@ -27,4 +27,4 @@
                 console.log(email, password);
             })
 
-        </script>
+        </script> -->

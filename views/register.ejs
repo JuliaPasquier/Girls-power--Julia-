@@ -1,13 +1,13 @@
 <%- include('partials/header'); -%>
 
-    <form method="POST">
+    <form method="post">
         <h2>Register</h2>
 
         <label for="firstname">firstname</label>
-        <input type="text" name="firstname" required />
+        <input type="text" name="firstName" required />
 
         <label for="lastname">lastname</label>
-        <input type="text" name="lastname" required />
+        <input type="text" name="lastName" required />
 
         <label for="email">email</label>
         <input type="text" name="email" required />
@@ -15,32 +15,32 @@
         <label for="github">github</label>
         <input type="text" name="github" required />
 
-        <label for="profilPicture">profilPicture</label>
-        <input type="text" name="profilPicture" required />
+        <label for="profilePicture">profilePicture</label>
+        <input type="text" name="profilePicture" required />
 
-        <label for="CV">CV</label>
-        <input type="text" name="CV" required />
+        <label for="resume">CV</label>
+        <input type="text" name="resume" required />
 
         <label for="password">password</label>
         <input type="password" name="password" required />
 
         <label for="repeatPassword"> repeat password</label>
-        <input type="password" name="repeatPassword" required />
+        <input type="password" required />
 
         <button type="submit">Register</button>
     </form>
-
+<!-- 
     <script>
         const form = document.querySelector('form');
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             console.log("Submit post");
-            const firstName = form.firstname.value;
-            const lastName = form.lastname.value;
+            const firstName = form.firstName.value;
+            const lastName = form.lastName.value;
             const email = form.email.value;
             const github = form.github.value;
             const profilPicture = form.profilPicture.value;
-            const resume = form.CV.value;
+            const resume = form.resume.value;
             const password = form.password.value;
             const repeatPassword = form.repeatPassword.value;
 
@@ -66,6 +66,6 @@
         })
         // form.submit();
         form.dispatchEvent(new Event('submit'));
-    </script>
+    </script> -->
 
     <%- include('partials/footer'); -%>
