@@ -1,6 +1,6 @@
 <%- include('partials/header'); -%>
 
-    <form method="post">
+    <form method="POST">
         <h2>Register</h2>
 
         <label for="firstname">firstname</label>
@@ -29,7 +29,7 @@
 
         <button type="submit">Register</button>
     </form>
-<!-- 
+
     <script>
         const form = document.querySelector('form');
         form.addEventListener('submit', async (e) => {
@@ -39,17 +39,18 @@
             const lastName = form.lastName.value;
             const email = form.email.value;
             const github = form.github.value;
-            const profilPicture = form.profilPicture.value;
+            const profilePicture = "form.profilePicture.value";
             const resume = form.resume.value;
             const password = form.password.value;
-            const repeatPassword = form.repeatPassword.value;
+            // const repeatPassword = form.repeatPassword.value;
+
 
 
             try {
                 const res = await fetch("/register", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ firstName, lastName, email, github, profilPicture, resume, password }),
+                    body: JSON.stringify({ firstName, lastName, email, github, profilePicture, resume, password }),
 
                 });
                 const data = await
@@ -66,6 +67,6 @@
         })
         // form.submit();
         form.dispatchEvent(new Event('submit'));
-    </script> -->
+    </script>
 
     <%- include('partials/footer'); -%>
