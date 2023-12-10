@@ -39,3 +39,15 @@ app.get("*", checkUser);
 // Required export for Vercel  
 module.exports = app;
 
+// var cloudinary = require('cloudinary').v2;
+
+// cloudinary.config({ 
+//   cloud_name: 'dtocby9kk', 
+//   api_key: '972974636311823', 
+//   api_secret: 'Cpg8MgtUaFCyPbDzOX1iXrzCMZo' 
+// });
+
+// cloudinary.uploader.upload("public\img\CV.JPG", function(error, result) {
+// 	console.log(result, error);
+//    });
+   
