@@ -1,10 +1,85 @@
-
-<%= include('partials/header') %>
-
-    
-        <%= include('partials/nav') %>
-
-        <a class="btn" href="/">home page</a>
-        <%= include('partials/footer') %>
+<%- include('partials/header') %>
 
 
+        <%- include('partials/nav') %>
+
+
+                <div class="offers">
+                        <form class="create-offer" method="POST">
+                                <h2 class="createdAt">create</h2>
+
+                                <label for="jobTitle">title</label>
+                                <input type="text" name="title" required />
+
+                                <label for="url">url</label>
+                                <input type="text" name="url" required />
+
+                                <label for="employer_name">employer name</label>
+                                <input type="text" name="employer_name" required />
+
+                                <label for="employer_email">email</label>
+                                <input type="text" name="employer_email" required />
+
+                                <label for="employer_phone">phone</label>
+                                <input type="text" name="employer_phone" required />
+
+                                <label for="employer_address">address</label>
+                                <input type="text" name="employer_address" />
+
+                                <label for="offer_origin">origin</label>
+                                <input type="text" name="offer_origin" />
+
+                                <label for="offer_status">status</label>
+                                <input type="text" name="offer_status" />
+
+                                <label for="comments">comments</label>
+                                <input type="text" name="comments" />
+
+                                <label for="author">author</label>
+                                <input type="text" name="author" required />
+
+                                <input class="envoyer" type="submit" value="Envoyer">
+                        </form>
+                        <a class="btn" href="/">home page</a>
+
+                </div>
+
+
+                <script>
+                        const form = document.querySelector('form');
+                        form.addEventListener('submit', async (e) => {
+                                e.preventDefault();
+
+                                const jobTitle = form.title.value;
+                                const url = form.url.value;
+                                const employer_name = form.employer_name.value;
+                                const employer_email = form.employer_email.value;
+                                const employer_phone = form.employer_phone.value;
+                                const employer_address = form.employer_address.value;
+                                const offer_origin = form.offer_origin.value;
+                                const offer_status = form.offer_status.value;
+                                const comments = form.comments.value;
+                                const author = form.author.value;
+
+                                try {
+
+                                        const res = await fetch("/create-offer", {
+                                                method: "POST",
+                                                headers: { "Content-Type": "application/json" },
+                                                body: JSON.stringify({ jobTitle, url, employer_name, employer_email, employer_phone, employer_address, offer_origin, offer_status, comments, author }),
+
+                                        });
+
+                                        res.json()
+                                        if (res.status === 200) {
+                                                window.location.href = "/";
+                                        }
+                                }
+                                catch (err) {
+                                        console.log(err);
+
+                                }
+                        })
+
+                </script>
+                <%- include('partials/footer') %>

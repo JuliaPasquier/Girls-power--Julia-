@@ -11,9 +11,9 @@ let currentUserId;
 
 // Create token
 const createToken = (id) => {
-    return jwt.sign({ id }, secret, {
-        expiresIn: maxAge
-    });
+	return jwt.sign({ id }, secret, {
+		expiresIn: maxAge
+	});
 };
 
 // Handle errors
@@ -51,51 +51,39 @@ const handleErrors = (err) => {
 //--------------Controller actions-------------
 // Display dashboard
 module.exports.dashboard_get = (req, res) => {
-    res.render("index");
-};
-
-// Display all offers
-module.exports.allOffers_get = async (req, res) => {
-	const author = req.params.author;
-	console.log(author);
-	try {
-		const offers = await Offer.find({ author: currentUserId });
-		res.status(200).json({ offers: offers });
-	} catch (err) {
-		const errors = handleErrors(err);
-		res.status(400).json({ errors });
-}
+	res.render("index");
 };
 
 // Register get
 module.exports.register_get = (req, res) => {
-    res.render("register");
+	res.render("register");
 };
 
 // Login get
 module.exports.login_get = (req, res) => {
-    res.render("login");
+	res.render("login");
 };
 
 // Register form
 module.exports.register_post = async (req, res) => {
 	console.log("Register Post")
-    const { firstName, 
-        lastName, 
-        email, 
-        github, 
-        password } = req.body;
+	const { firstName,
+		lastName,
+		email,
+		github,
+		password } = req.body;
 	try {
 		const profilePictureUrl = await handleProfilePictureUpload(req, res);
-    	const resumeUrl = await handleResumeUpload(req, res);
-		const user = await User.create({ 
-            firstName, 
-            lastName, 
-            email, 
-            github, 
-            profilePictureUrl,
-            resumeUrl,
-            password });
+		const resumeUrl = await handleResumeUpload(req, res);
+		const user = await User.create({
+			firstName,
+			lastName,
+			email,
+			github,
+			profilePictureUrl,
+			resumeUrl,
+			password
+		});
 		const token = createToken(user._id);
 		res.cookie("jwt", token, {
 			maxAge: maxAge * 1000,
@@ -110,18 +98,18 @@ module.exports.register_post = async (req, res) => {
 
 // Login form
 module.exports.login_post = async (req, res) => {
-	const { 
-		email, 
-        password } = req.body;
-		try {
-			const user = await User.login(email, password);
-			const token = createToken(user._id);
-			res.cookie("jwt", token, {
-				maxAge: maxAge * 1000,
-				httpOnly: true,
-			});
-			currentUserId = user._id;
-			res.status(200).json({ user: user._id });
+	const {
+		email,
+		password } = req.body;
+	try {
+		const user = await User.login(email, password);
+		const token = createToken(user._id);
+		res.cookie("jwt", token, {
+			maxAge: maxAge * 1000,
+			httpOnly: true,
+		});
+		currentUserId = user._id;
+		res.status(200).json({ user: user._id });
 	} catch (err) {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });
@@ -130,34 +118,42 @@ module.exports.login_post = async (req, res) => {
 
 // Profile get
 module.exports.profile_get = (req, res) => {
-    res.render("profile");
+	res.render("profile");
 };
 
 // Create offer get
 module.exports.create_get = (req, res) => {
-    res.render("create-offer");
+	res.render("create-offer");
 };
 
 // Create offer form
 module.exports.create_post = async (req, res) => {
-	const { 
-        jobTitle, 
-        url, 
-        employer, 
-        offerOrigin, 
-        offerStatus, 
-        comments } = req.body;
+	const {
+		jobTitle,
+		url,
+		employer_name,
+		employer_email,
+		employer_phone,
+		employer_address,
+		offer_origin,
+		offer_status,
+		comments,
+		author: currentUserId } = req.body;
 
 	try {
-		const newOffer = await Offer.create({ 
-                jobTitle, 
-                url, 
-                employer, 
-                offerOrigin, 
-                offerStatus, 
-                comments,
-                author: currentUserId });
-        res.status(201).redirect("/");
+		const newOffer = await Offer.create({
+			jobTitle,
+			url,
+			employer_name,
+			employer_email,
+			employer_phone,
+			employer_address,
+			offer_origin,
+			offer_status,
+			comments,
+			author: currentUserId
+		});
+		res.status(201).redirect("/");
 	} catch (err) {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });
@@ -166,37 +162,40 @@ module.exports.create_post = async (req, res) => {
 
 // Update offer get
 module.exports.update_get = (req, res) => {
-    res.render("update-offer");
+	const id = req.params.id;
+	const offer = Offer.findById(id);
+	res.render("update-offer", { offer })
 };
 
 // Update offer form
 module.exports.update_put = async (req, res) => {
-    const offerId = req.params.id;
+	const offerId = req.params.id;
 	console.log(offerId);
-	
-	const { 
-		jobTitle, 
-		url, 
-		employer, 
-		offerOrigin, 
-		offerStatus, 
+
+	const {
+		jobTitle,
+		url,
+		employer,
+		offerOrigin,
+		offerStatus,
 		comments } = req.body;
-	
+
 	try {
 		const updatedOffer = await Offer.updateOne(
-			{ _id: offerId }, 
-			{ $set:
-				{ 
+			{ _id: offerId },
+			{
+				$set:
+				{
 					updatedAt: Date.now(),
-					jobTitle, 
-					url, 
-					employer, 
-					offerOrigin, 
-					offerStatus, 
-					comments 
+					jobTitle,
+					url,
+					employer,
+					offerOrigin,
+					offerStatus,
+					comments
 				}
 			}
-		); 
+		);
 		res.status(201).json({ offer: updatedOffer._id });
 	}
 	catch (err) {
@@ -205,8 +204,15 @@ module.exports.update_put = async (req, res) => {
 	}
 };
 
+// offer_get
+
+module.exports.offer_get = async (req, res) => {
+	const id = req.params.id;
+	const offer = await Offer.findById(id);
+	res.render("offer", { offer });
+}
 // Logout get
 module.exports.logout_get = (req, res) => {
-    res.cookie("jwt", "", { maxAge: 1 });
-    res.redirect("/login");
+	res.cookie("jwt", "", { maxAge: 1 });
+	res.redirect("/login");
 };
