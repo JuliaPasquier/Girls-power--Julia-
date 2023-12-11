@@ -1,4 +1,4 @@
-// imports
+// Imports
 require('dotenv').config();
 const User = require("../models/User");
 const Offer = require("../models/Offer");
@@ -9,36 +9,36 @@ const maxAge = process.env.MAX_AGE;
 
 let currentUserId;
 
-// create token
+// Create token
 const createToken = (id) => {
     return jwt.sign({ id }, secret, {
         expiresIn: maxAge
     });
 };
 
-// handle errors
+// Handle errors
 const handleErrors = (err) => {
 	console.log(err.message, err.code);
 	let errors = { email: "", password: "" };
 
-	// incorrect email
+	// Incorrect email
 	if (err.message === "incorrect email") {
 		errors.email = "That email is not registered";
 	}
 
-	// incorrect password
+	// Incorrect password
 	if (err.message === "incorrect password") {
 		errors.password = "That password is incorrect";
 	}
 
-	// duplicate error code
+	// Duplicate error code
 	if (err.code === 11000) {
 		errors.email = "Email already exists";
 
 		return errors;
 	}
 
-	// validation errors
+	// Validation errors
 	if (err.message.includes("user validation failed")) {
 		Object.values(err.errors).forEach(({ properties }) => {
 			errors[properties.path] = properties.message;
@@ -48,12 +48,14 @@ const handleErrors = (err) => {
 	return errors;
 };
 
-//Controller actions
+//--------------Controller actions-------------
+// Display dashboard
 module.exports.dashboard_get = (req, res) => {
     res.render("index");
 };
 
-module.exports.offers_get = async (req, res) => {
+// Display all offers
+module.exports.allOffers_get = async (req, res) => {
 	const author = req.params.author;
 	console.log(author);
 	try {
@@ -65,14 +67,17 @@ module.exports.offers_get = async (req, res) => {
 }
 };
 
+// Register get
 module.exports.register_get = (req, res) => {
     res.render("register");
 };
 
+// Login get
 module.exports.login_get = (req, res) => {
     res.render("login");
 };
 
+// Register form
 module.exports.register_post = async (req, res) => {
 	console.log("Register Post")
     const { firstName, 
@@ -103,6 +108,7 @@ module.exports.register_post = async (req, res) => {
 	}
 };
 
+// Login form
 module.exports.login_post = async (req, res) => {
 	const { 
 		email, 
@@ -122,19 +128,17 @@ module.exports.login_post = async (req, res) => {
 	}
 };
 
-module.exports.logout_get = (req, res) => {
-    res.cookie("jwt", "", { maxAge: 1 });
-    res.redirect("/login");
-};
-
+// Profile get
 module.exports.profile_get = (req, res) => {
     res.render("profile");
 };
 
+// Create offer get
 module.exports.create_get = (req, res) => {
     res.render("create-offer");
 };
 
+// Create offer form
 module.exports.create_post = async (req, res) => {
 	const { 
         jobTitle, 
@@ -153,7 +157,6 @@ module.exports.create_post = async (req, res) => {
                 offerStatus, 
                 comments,
                 author: currentUserId });
-		//res.status(201).json({ offer: newOffer._id });
         res.status(201).redirect("/");
 	} catch (err) {
 		const errors = handleErrors(err);
@@ -161,10 +164,12 @@ module.exports.create_post = async (req, res) => {
 	}
 };
 
+// Update offer get
 module.exports.update_get = (req, res) => {
     res.render("update-offer");
 };
 
+// Update offer form
 module.exports.update_put = async (req, res) => {
     const offerId = req.params.id;
 	console.log(offerId);
@@ -198,4 +203,10 @@ module.exports.update_put = async (req, res) => {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });
 	}
+};
+
+// Logout get
+module.exports.logout_get = (req, res) => {
+    res.cookie("jwt", "", { maxAge: 1 });
+    res.redirect("/login");
 };
