@@ -44,9 +44,9 @@
             const password = form.password.value;
             // const repeatPassword = form.repeatPassword.value;
 
-            cloudinary.uploader.upload(profilePicture, function (error, result) {
-                console.log(result, error);
-            });
+            // cloudinary.uploader.upload(profilePicture, function (error, result) {
+            //     console.log(result, error);
+            // });
 
 
             try {
@@ -69,7 +69,7 @@
             }
         })
         // form.submit();
-        form.dispatchEvent(new Event('submit'));
+        //form.dispatchEvent(new Event('submit'));
     </script>
 
     <%- include('partials/footer'); -%>
