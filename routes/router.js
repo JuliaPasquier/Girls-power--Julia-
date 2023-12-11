@@ -7,6 +7,9 @@ const router = Router();
 // General
 router.get("/", requireAuth, controller.dashboard_get);
 
+//Offers
+router.get("/api/:author", requireAuth, controller.offers_get);
+
 // Login
 router.get("/login", controller.login_get);
 router.post("/login", controller.login_post);

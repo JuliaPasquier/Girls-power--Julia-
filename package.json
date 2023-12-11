@@ -19,6 +19,8 @@
     "init": "^0.1.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.2",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
     "nodemon": "^3.0.2",
     "pkg": "^5.8.1",
     "validator": "^13.11.0"

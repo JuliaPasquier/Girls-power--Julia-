@@ -1,9 +1,9 @@
 // imports
 require('dotenv').config();
-const cloudinary = require('cloudinary').v2;
 const User = require("../models/User");
 const Offer = require("../models/Offer");
 const jwt = require("jsonwebtoken");
+const { handleProfilePictureUpload, handleResumeUpload } = require('../middleware/uploadMiddleware');
 const secret = process.env.JWT_SECRET;
 const maxAge = process.env.MAX_AGE;
 
@@ -15,13 +15,6 @@ const createToken = (id) => {
         expiresIn: maxAge
     });
 };
-
-// cloudinary config
-cloudinary.config({ 
-	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-	api_key: process.env.CLOUDINARY_API_KEY,
-	api_secret: process.env.CLOUDINARY_API_SECRET
-});
 
 // handle errors
 const handleErrors = (err) => {
@@ -60,6 +53,18 @@ module.exports.dashboard_get = (req, res) => {
     res.render("index");
 };
 
+module.exports.offers_get = async (req, res) => {
+	const author = req.params.author;
+	console.log(author);
+	try {
+		const offers = await Offer.find({ author: currentUserId });
+		res.status(200).json({ offers: offers });
+	} catch (err) {
+		const errors = handleErrors(err);
+		res.status(400).json({ errors });
+}
+};
+
 module.exports.register_get = (req, res) => {
     res.render("register");
 };
@@ -74,17 +79,17 @@ module.exports.register_post = async (req, res) => {
         lastName, 
         email, 
         github, 
-        profilePicture, 
-        resume, 
         password } = req.body;
 	try {
+		const profilePictureUrl = await handleProfilePictureUpload(req, res);
+    	const resumeUrl = await handleResumeUpload(req, res);
 		const user = await User.create({ 
             firstName, 
             lastName, 
             email, 
             github, 
-            profilePicture, 
-            resume, 
+            profilePictureUrl,
+            resumeUrl,
             password });
 		const token = createToken(user._id);
 		res.cookie("jwt", token, {
