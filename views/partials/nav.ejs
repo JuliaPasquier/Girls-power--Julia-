@@ -1,14 +1,14 @@
 <nav>
     <div class="logo">LOGO</div>
-    <!-- <div class="profile">
-        
+    <div class="profile">
+        <% if(user) { %>
             <div class="username">
-               
+                <%= user.firstName + ' ' + user.lastName %>
             </div>
             <a href="/profile">My Profile</a>
             <a href="/logout">Log out</a>
-
-    </div> -->
+            <% } %>
+    </div>
 
     </div>
 </nav>

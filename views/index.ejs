@@ -3,7 +3,8 @@
 
     <%- include('partials/nav') %>
 
-        <h1>Dashboard</h1>
+
+        <h1 class="Dashboard">Dashboard</h1>
         <a href="/create-offer">Create a new job</a>
         <a href="/update-offer">Update a job</a>
 
@@ -20,7 +21,33 @@
                 <option value="dsc">Dsc.</option>
             </select>
         </form>
-    
-        <a class="btn" href="/login">logout</a>
 
-        <%- include('partials/footer') %>
+        <% console.log(user) %>
+
+            <a class="btn" href="/login">logout</a>
+
+            <!-- AFFICHER OFFRES  -->
+            
+            <% if (offers.length) { %>
+                <div>
+                    <h3>My Offers</h3>
+                    <% offers.forEach((offer)=> { %>
+                        <div>
+                            <p>
+                                <%= offer.offerStatus %>
+                            </p>
+                            <h4>
+                                <%= offer.jobTitle %>
+                            </h4>
+                            <p>
+                                <%= offer.employerName %>
+                            </p>
+                            <a href="/offers/<%= offer._id %>">See More</a>
+                        </div>
+                        <% }); %>
+                </div>
+                <hr>
+                <% } else { %>
+                    <p>No offer found.</p>
+                    <% } %>
+                        <%- include('partials/footer') %>
