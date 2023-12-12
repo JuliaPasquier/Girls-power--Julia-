@@ -161,9 +161,9 @@ module.exports.create_post = async (req, res) => {
 };
 
 // Update offer get
-module.exports.update_get = (req, res) => {
+module.exports.update_get = async (req, res) => {
 	const id = req.params.id;
-	const offer = Offer.findById(id);
+	const offer = await Offer.findById(id);
 	res.render("update-offer", { offer })
 };
 

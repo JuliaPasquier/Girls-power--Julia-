@@ -33,8 +33,9 @@ mongoose
 	.catch((err) => console.log(err));
 
 //Routes
-app.use(router);
+
 app.get("*", checkUser);
+app.use(router);
 
 // Required export for Vercel  
 module.exports = app;   
