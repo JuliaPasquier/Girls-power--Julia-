@@ -1,18 +1,22 @@
+<%- include('partials/header') %>
 
 
-        <div class="dashboard-grid">
-            <% offers.forEach(offer)=> %>
-                <div class="card">
-                    <div class="status">
-                        <%= offer.status %>
-                    </div>
-                    <div class="name">
-                        <%= offer.title %>
-                    </div>
-                    <div class="employer">
-                        <%= offer.employer_name %>
-                    </div>
-                    <a href="" class="seemore">See more</a>
+    <%- include('partials/nav') %>
+
+        <% offers.forEach(function(create-offer) { %>
+            <div class="card">
+                <div class="status">
+                    <%= offer.status %>
                 </div>
-        </div>
-        
+                <div class="name">
+                    <%= offer.title %>
+                </div>
+                <div class="employer">
+                    <%= offer.employerName %>
+                </div>
+                <a href="" class="seemore">See more</a>
+            </div>
+            <% }); %>
+
+
+                <%- include('partials/footer') %>

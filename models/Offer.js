@@ -21,31 +21,31 @@ const offerSchema = new mongoose.Schema({
 		required: [true, "Please enter the job offer URL"],
 		trim: true,
 	},
-	employer_name: {
+	employerName: {
 		type: String,
 		required: [true, "Please enter the name of the employer"],
 		trim: true,
 	},
-	employer_email: {
+	employerEmail: {
 		type: String,
 		required: [true, "Please enter your email"],
 		lowercase: true,
 		validate: [isEmail, "Please enter a valid email"],
 		trim: true,
 	},
-	employer_phone: {
+	employerPhone: {
 		type: String,
 		trim: true,
 	},
-	employer_address: {
+	employerAddress: {
 		type: String,
 		trim: true,
 	},
-	offer_origin: {
+	offerOrigin: {
 		type: String,
 		required: true,
 	},
-	offer_status: {
+	offerStatus: {
 		type: String,
 		required: true,
 	},

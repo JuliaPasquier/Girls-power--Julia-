@@ -131,12 +131,12 @@ module.exports.create_post = async (req, res) => {
 	const {
 		jobTitle,
 		url,
-		employer_name,
-		employer_email,
-		employer_phone,
-		employer_address,
-		offer_origin,
-		offer_status,
+		employerName,
+		employerEmail,
+		employerPhone,
+		employerAddress,
+		offerOrigin,
+		offerStatus,
 		comments,
 		author: currentUserId } = req.body;
 
@@ -144,12 +144,12 @@ module.exports.create_post = async (req, res) => {
 		const newOffer = await Offer.create({
 			jobTitle,
 			url,
-			employer_name,
-			employer_email,
-			employer_phone,
-			employer_address,
-			offer_origin,
-			offer_status,
+			employerName,
+			employerEmail,
+			employerPhone,
+			employerAddress,
+			offerOrigin,
+			offerStatus,
 			comments,
 			author: currentUserId
 		});
@@ -175,7 +175,10 @@ module.exports.update_post = async (req, res) => {
 	const {
 		jobTitle,
 		url,
-		employer,
+		employerName,
+		employerEmail,
+		employerPhone,
+		employerAddress,
 		offerOrigin,
 		offerStatus,
 		comments } = req.body;
@@ -189,7 +192,10 @@ module.exports.update_post = async (req, res) => {
 					updatedAt: Date.now(),
 					jobTitle,
 					url,
-					employer,
+					employerName,
+					employerEmail,
+					employerPhone,
+					employerAddress,
 					offerOrigin,
 					offerStatus,
 					comments

@@ -14,23 +14,23 @@
                                 <label for="url">url</label>
                                 <input type="text" name="url" required />
 
-                                <label for="employer_name">employer name</label>
-                                <input type="text" name="employer_name" required />
+                                <label for="employerName">employer name</label>
+                                <input type="text" name="employerName" required />
 
-                                <label for="employer_email">email</label>
-                                <input type="text" name="employer_email" required />
+                                <label for="employerEmail">email</label>
+                                <input type="text" name="employerEmail" required />
 
-                                <label for="employer_phone">phone</label>
-                                <input type="text" name="employer_phone" required />
+                                <label for="employerPhone">phone</label>
+                                <input type="text" name="employerPhone" />
 
-                                <label for="employer_address">address</label>
-                                <input type="text" name="employer_address" />
+                                <label for="employerAddress">address</label>
+                                <input type="text" name="employerAddress" />
 
-                                <label for="offer_origin">origin</label>
-                                <input type="text" name="offer_origin" />
+                                <label for="offerOrigin">origin</label>
+                                <input type="text" name="offerOrigin" />
 
-                                <label for="offer_status">status</label>
-                                <input type="text" name="offer_status" />
+                                <label for="offerStatus">status</label>
+                                <input type="text" name="offerStatus" />
 
                                 <label for="comments">comments</label>
                                 <input type="text" name="comments" />
@@ -52,12 +52,12 @@
 
                                 const jobTitle = form.title.value;
                                 const url = form.url.value;
-                                const employer_name = form.employer_name.value;
-                                const employer_email = form.employer_email.value;
-                                const employer_phone = form.employer_phone.value;
-                                const employer_address = form.employer_address.value;
-                                const offer_origin = form.offer_origin.value;
-                                const offer_status = form.offer_status.value;
+                                const employerName = form.employerName.value;
+                                const employerEmail = form.employerEmail.value;
+                                const employerPhone = form.employerPhone.value;
+                                const employerAddress = form.employerAddress.value;
+                                const offerOrigin = form.offerOrigin.value;
+                                const offerStatus = form.offerStatus.value;
                                 const comments = form.comments.value;
                                 const author = form.author.value;
 
@@ -66,7 +66,7 @@
                                         const res = await fetch("/create-offer", {
                                                 method: "POST",
                                                 headers: { "Content-Type": "application/json" },
-                                                body: JSON.stringify({ jobTitle, url, employer_name, employer_email, employer_phone, employer_address, offer_origin, offer_status, comments, author }),
+                                                body: JSON.stringify({ jobTitle, url, employerName, employerEmail, employerPhone, employerAddress, offerOrigin, offerStatus, comments, author }),
 
                                         });
 
