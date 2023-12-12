@@ -1,53 +1,75 @@
 <%- include('partials/header') %>
 
 
-    <%- include('partials/nav') %>
+    <h1 class="Dashboard">Dashboard</h1>
+    <a href="/create-offer">Create a new job</a>
+    <a href="/update-offer">Update a job</a>
 
+    <form method="POST">
+        <label for="filter">Filter by</label>
+        <select name="filter" id="filter">
+            <option value="status">Status</option>
+            <option value="date">Date</option>
+        </select>
 
-        <h1 class="Dashboard">Dashboard</h1>
-        <a href="/create-offer">Create a new job</a>
-        <a href="/update-offer">Update a job</a>
+        <label for="order">Order</label>
+        <select name="order" id="order">
+            <option value="asc">Asc.</option>
+            <option value="dsc">Dsc.</option>
+        </select>
+    </form>
 
-        <form method="POST">
-            <label for="filter">Filter by</label>
-            <select name="filter" id="filter">
-                <option value="status">Status</option>
-                <option value="date">Date</option>
-            </select>
+    <% console.log(user) %>
 
-            <label for="order">Order</label>
-            <select name="order" id="order">
-                <option value="asc">Asc.</option>
-                <option value="dsc">Dsc.</option>
-            </select>
-        </form>
+        <a class="btn" href="/login">logout</a>
 
-        <% console.log(user) %>
+        <!-- AFFICHER OFFRES  -->
 
-            <a class="btn" href="/login">logout</a>
+        <% if (offers.length) { %>
+            <div>
+                <h3>My Offers</h3>
+                <% offers.forEach((offer)=> { %>
+                    <div>
+                        <p>
+                            <%= offer.offerStatus %>
+                        </p>
+                        <h4>
+                            <%= offer.jobTitle %>
+                        </h4>
+                        <p>
+                            <%= offer.employerName %>
+                        </p>
+                        <a href="/offers/<%= offer._id %>">See More</a>
+                    </div>
+                    <% }); %>
+            </div>
+            <hr>
+            <% } else { %>
+                <p>No offer found.</p>
+                <% } %>
 
-            <!-- AFFICHER OFFRES  -->
-            
-            <% if (offers.length) { %>
-                <div>
-                    <h3>My Offers</h3>
-                    <% offers.forEach((offer)=> { %>
-                        <div>
-                            <p>
-                                <%= offer.offerStatus %>
-                            </p>
-                            <h4>
-                                <%= offer.jobTitle %>
-                            </h4>
-                            <p>
-                                <%= offer.employerName %>
-                            </p>
-                            <a href="/offers/<%= offer._id %>">See More</a>
-                        </div>
-                        <% }); %>
-                </div>
-                <hr>
-                <% } else { %>
-                    <p>No offer found.</p>
-                    <% } %>
-                        <%- include('partials/footer') %>
+                    <!-- <script>
+
+                            const id = req.params.id;
+                            try {
+
+                                const res = await fetch("/create-offer", {
+                                    method: "POST",
+                                    headers: { "Content-Type": "application/json" },
+                                    body: JSON.stringify({ email, password }),
+
+                                });
+
+                                res.json()
+                                if (res.status === 200) {
+                                    window.location.href = "/";
+                                }
+                            }
+                            catch (err) {
+                                console.log(err);
+
+                            }
+
+                        </script> -->
+
+                    <%- include('partials/footer') %>

@@ -33,7 +33,6 @@ mongoose
 	.catch((err) => console.log(err));
 
 //Routes
-
 app.get("*", checkUser);
 app.use(router);
 

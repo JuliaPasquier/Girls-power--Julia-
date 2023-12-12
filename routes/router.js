@@ -28,7 +28,6 @@ router.post("/update-offer/:id", requireAuth, controller.update_post);
 
 // offer
 router.get("/offer/:id", requireAuth, controller.offer_get);
-router.post("/offer/:id", requireAuth, controller.offer_get);
 
 
 // Logout
