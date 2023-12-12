@@ -1,7 +1,89 @@
 <%- include('partials/header') %>
 
-    
-        <%- include('partials/nav') %>
+
+    <%- include('partials/nav') %>
+
+        <h2>Update offer</h2>
+
+        <form class="update-offer" method="POST">
+
+            <label for="jobTitle">Job Title</label>
+            <input type="text" name="jobTitle" value="<%= offer.jobTitle %>" required />
 
 
-            <%- include('partials/footer') %>
+            <label for="url">Website</label>
+            <input type="text" name="url" value="<%= offer.url %>" required />
+
+
+            <label for="employer_name">Name</label>
+            <input type="text" name="employer_name" value="<%= offer.employer_name %>" required />
+
+
+            <label for="employer_email">Email</label>
+            <input type="text" name="employer_email" value="<%= offer.employer_email %>" required />
+
+
+            <label for="employer_phone">Phone</label>
+            <input type="text" name="employer_phone" value="<%= offer.employer_phone %>" />
+
+
+            <label for="employer_address">Address</label>
+            <input type="text" name="employer_address" value="<%= offer.employer_address %>" />
+
+
+            <label for="offer_origin">Origin</label>
+            <input type="text" name="offer_origin" value="<%= offer.offer_origin %>" />
+
+            <label for="offer_status">Status</label>
+        
+            <select name="offer_status" id="offer_status" value="<%= offer.offer_status %>">
+                <option value="interested">Interested</option>
+                <option value="CV">Resume</option>
+                <option value="Negative">Negative</option>
+                <option value="Interview">Interview</option>
+            </select>
+
+
+            <label for="comments">Comments</label>
+            <input type="text" name="comments" value="<%= offer.comments %>" />
+
+            <button>Update</button>
+
+        </form>
+
+
+        <%- include('partials/footer') %>
+
+            <script>
+                const form = document.querySelector('update-offer');
+                form.addEventListener("submit", async (e) => {
+                    e.preventDefault();
+
+
+                    const jobTitle = form.jobTitle.value;
+                    const url = form.url.value;
+                    const employer_name = form.employer_name.value;
+                    const employer_email = form.employer_email.value;
+                    const employer_phone = form.employer_phone.value;
+                    const employer_address = form.employer_address.value;
+                    const offer_origin = form.offer_origin.value;
+                    const offer_status = form.offer_status.value;
+                    const comments = form.comments.value;
+
+                    try {
+                        const res = await fetch("/create-offer", {
+                            method: "POST",
+                            body: JSON.stringify({ jobTitle, url, employer_name, employer_email, employer_phone, employer_address, offer_origin, offer_status, comments }),
+                            headers: { "Content-Type": "application/json" },
+                        });
+                        res.json()
+                        if (res.status === 200) {
+                            window.location.href = "/";
+                        }
+                    }
+                    catch (err) {
+                        console.log(err);
+
+                    }
+                });
+            </script>
