@@ -168,7 +168,7 @@ module.exports.update_get = (req, res) => {
 };
 
 // Update offer form
-module.exports.update_put = async (req, res) => {
+module.exports.update_post = async (req, res) => {
 	const offerId = req.params.id;
 	console.log(offerId);
 
@@ -203,6 +203,8 @@ module.exports.update_put = async (req, res) => {
 		res.status(400).json({ errors });
 	}
 };
+
+
 
 // offer_get
 

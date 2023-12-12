@@ -23,8 +23,8 @@ router.get("/create-offer", requireAuth, controller.create_get);
 router.post("/create-offer", requireAuth, controller.create_post);
 
 // Update an offer
-router.get("/update/:id", requireAuth, controller.update_get);
-router.put("/update/:id", requireAuth, controller.update_put);
+router.get("/update-offer/:id", requireAuth, controller.update_get);
+router.post("/update-offer/:id", requireAuth, controller.update_post);
 
 // offer
 router.get("/offer/:id", requireAuth, controller.offer_get);
