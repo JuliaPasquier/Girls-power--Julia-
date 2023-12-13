@@ -51,6 +51,7 @@ const handleErrors = (err) => {
 //--------------Controller actions-------------
 // Display dashboard
 module.exports.dashboard_get = (req, res) => {
+	console.log("test dashboard_get ")
 	res.render("index");
 };
 

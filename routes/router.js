@@ -1,15 +1,16 @@
 const { Router } = require("express");
 const controller = require("../controllers/controller");
-const { requireAuth } = require("../middleware/authMiddleware");
+const { checkUser, requireAuth } = require("../middleware/authMiddleware");
 
 const router = Router();
 
 // General
-router.get("/", requireAuth, controller.dashboard_get);
+router.get("/", checkUser, controller.dashboard_get);
 
 // Login
 router.get("/login", controller.login_get);
 router.post("/login", controller.login_post);
+
 
 // Register
 router.get("/register", controller.register_get);

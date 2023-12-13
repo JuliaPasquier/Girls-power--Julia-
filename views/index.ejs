@@ -41,35 +41,9 @@
                         </p>
                         <a href="/offers/<%= offer._id %>">See More</a>
                     </div>
-                    <% }); %>
+                <% }); %>
             </div>
             <hr>
-            <% } else { %>
-                <p>No offer found.</p>
-                <% } %>
-
-                    <!-- <script>
-
-                            const id = req.params.id;
-                            try {
-
-                                const res = await fetch("/create-offer", {
-                                    method: "POST",
-                                    headers: { "Content-Type": "application/json" },
-                                    body: JSON.stringify({ email, password }),
-
-                                });
-
-                                res.json()
-                                if (res.status === 200) {
-                                    window.location.href = "/";
-                                }
-                            }
-                            catch (err) {
-                                console.log(err);
-
-                            }
-
-                        </script> -->
-
-                    <%- include('partials/footer') %>
+        <% } else { %>
+            <p>No offer found.</p>
+        <% } %>
