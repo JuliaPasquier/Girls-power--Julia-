@@ -1,46 +1,133 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body {
+  max-width: 400px;
   margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
 }
+
 .title {
-  color: black;
-  font-size: 40px;
-  text-transform: uppercase;
+  text-align: center;
   margin-bottom: 20px;
 }
 
-button {
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.login {
-  text-decoration: none;
-  background-color: black;
-  color: white;
-  width: 10vw;
-  height: 5vh;
-  text-align: center;
-  margin-top: 20px;
-  border-radius: 10px;
-}
 .register {
-  text-decoration: none;
-  background-color: black;
-  color: white;
-  width: 10vw;
-  height: 5vh;
+  display: block;
   text-align: center;
-  margin-top: 20px;
-  border-radius: 10px;
+  margin-top: 10px;
+  color: #4caf50;
+  text-decoration: none;
 }
 
+.register:hover {
+  text-decoration: underline;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.Dashboard {
+  text-align: center;
+  color: #333;
+  margin-top: 50px;
+}
+
+a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #333;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+select {
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #333;
+}
+
+p {
+  margin: 5px 0;
+}
+
+h4 {
+  margin: 10px 0;
+  color: #333;
+}
+
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.no-offer {
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
