@@ -23,6 +23,9 @@ router.get("/profile", requireAuth, controller.profile_get);
 router.get("/create-offer", requireAuth, controller.create_get);
 router.post("/create-offer", requireAuth, controller.create_post);
 
+// filter offers
+router.get("/filter-offers", requireAuth, controller.filterOffersGet);
+
 // Update an offer
 router.get("/update-offer/:id", requireAuth, controller.update_get);
 router.post("/update-offer/:id", requireAuth, controller.update_post);

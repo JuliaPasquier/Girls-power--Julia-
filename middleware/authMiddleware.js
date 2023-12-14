@@ -5,6 +5,7 @@ const User = require('../models/User');
 const Offer = require("../models/Offer");
 
 
+
 const requireAuth = (req, res, next) => {
 	const token = req.cookies.jwt;
 
@@ -31,7 +32,7 @@ const checkUser = (req, res, next) => {
 	console.log('blue')
 	if (token) {
 		console.log("vert");
-			jwt.verify(token, secret, async (err, decodedToken) => {
+		jwt.verify(token, secret, async (err, decodedToken) => {
 			if (err) {
 				console.log('jaune')
 				res.locals.user = null;
@@ -41,11 +42,11 @@ const checkUser = (req, res, next) => {
 				let user = await User.findById(decodedToken.id);
 				console.log("bleu")
 				res.locals.user = user;
-
+console.log(user, "user")
 				let offers = await Offer.find({ author: user._id });
 				res.locals.offers = offers;
-
-				console.log(user)
+				console.log(offers, "iciiiiii")
+				
 				next();
 			}
 		});

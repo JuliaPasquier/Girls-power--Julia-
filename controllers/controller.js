@@ -5,8 +5,7 @@ const Offer = require("../models/Offer");
 const jwt = require("jsonwebtoken");
 const { handleProfilePictureUpload, handleResumeUpload } = require('../middleware/uploadMiddleware');
 const secret = process.env.JWT_SECRET;
-const maxAge = process.env.MAX_AGE;
-
+const maxAge = 3 * 24 * 60 * 60;
 let currentUserId;
 
 // Create token
@@ -110,6 +109,7 @@ module.exports.login_post = async (req, res) => {
 			httpOnly: true,
 		});
 		currentUserId = user._id;
+		console.log(currentUserId, "currentUserId")
 		res.status(200).json({ user: user._id });
 	} catch (err) {
 		const errors = handleErrors(err);
@@ -139,7 +139,7 @@ module.exports.create_post = async (req, res) => {
 		offerOrigin,
 		offerStatus,
 		comments,
-		author: currentUserId } = req.body;
+	} = req.body;
 
 	try {
 		const newOffer = await Offer.create({
@@ -152,13 +152,27 @@ module.exports.create_post = async (req, res) => {
 			offerOrigin,
 			offerStatus,
 			comments,
-			author: currentUserId
+			author: currentUserId,
 		});
+		console.log(author);
 		res.status(201).redirect("/");
 	} catch (err) {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });
 	}
+};
+//offers filter
+module.exports.filterOffersGet = async (req, res) => {
+	console.log("coucou");
+	const filterField =
+		req.query.filter === "date" ? "updatedAt" : "offerStatus";
+	const sortOrder = req.query.order === "dsc" ? -1 : 1;
+
+	const offers = await Offer.find({
+		author: currentUserId,
+	}).sort({ [filterField]: sortOrder });
+	res.render("partials/offers-grid", { offers });
+
 };
 
 // Update offer get
@@ -203,7 +217,9 @@ module.exports.update_post = async (req, res) => {
 				}
 			}
 		);
-		res.status(201).json({ offer: updatedOffer._id });
+		//res.status(201).json({ offer: updatedOffer._id });
+		res.status(201).redirect("/");
+
 	}
 	catch (err) {
 		const errors = handleErrors(err);

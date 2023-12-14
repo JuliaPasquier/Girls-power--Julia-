@@ -1,11 +1,12 @@
 <%- include('partials/header') %>
-
+    <a class="btn" href="/login">logout</a>
+  
 
     <h1 class="Dashboard">Dashboard</h1>
     <a href="/create-offer">Create a new job</a>
     <a href="/update-offer">Update a job</a>
 
-    <form method="POST">
+    <form id="filter-form" action="/filter-offers" method="GET">
         <label for="filter">Filter by</label>
         <select name="filter" id="filter">
             <option value="status">Status</option>
@@ -18,33 +19,25 @@
             <option value="dsc">Dsc.</option>
         </select>
     </form>
+  <a class="envoyer" href="/">Envoyer</a>
 
-    <% console.log(user) %>
+    <!-- AFFICHER OFFRES  -->
 
+                <%- include('partials/offers-grid'); %>
 
-    <a class="btn" href="/login">logout</a>
+                    <%- include('partials/footer'); %>
 
-        <!-- AFFICHER OFFRES  -->
+            <script>
+                const filterForm = document.querySelector('#filter-form');
+                const filter = document.querySelector('#filter');
+                const order = document.querySelector('#order');
 
-        <% if (offers.length) { %>
-            <div>
-                <h3>My Offers</h3>
-                <% offers.forEach((offer)=> { %>
-                    <div>
-                        <p>
-                            <%= offer.offerStatus %>
-                        </p>
-                        <h4>
-                            <%= offer.jobTitle %>
-                        </h4>
-                        <p>
-                            <%= offer.employerName %>
-                        </p>
-                        <a href="/offers/<%= offer._id %>">See More</a>
-                    </div>
-                <% }); %>
-            </div>
-            <hr>
-        <% } else { %>
-            <p>No offer found.</p>
-        <% } %>
+                filterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const filterValue = filter.value;
+                    const orderValue = order.value;
+
+                    window.location.href = `/filter-offers?filter=${filterValue}&order=${orderValue}`;
+                })
+            </script>
