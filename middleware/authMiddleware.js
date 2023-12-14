@@ -42,7 +42,7 @@ const checkUser = (req, res, next) => {
 				let user = await User.findById(decodedToken.id);
 				console.log("bleu")
 				res.locals.user = user;
-console.log(user, "user")
+				console.log(user, "user")
 				let offers = await Offer.find({ author: user._id });
 				res.locals.offers = offers;
 				console.log(offers, "iciiiiii")

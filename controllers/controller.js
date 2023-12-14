@@ -104,11 +104,11 @@ module.exports.login_post = async (req, res) => {
 	try {
 		const user = await User.login(email, password);
 		const token = createToken(user._id);
+		currentUserId = user._id;
 		res.cookie("jwt", token, {
 			maxAge: maxAge * 1000,
 			httpOnly: true,
 		});
-		currentUserId = user._id;
 		console.log(currentUserId, "currentUserId")
 		res.status(200).json({ user: user._id });
 	} catch (err) {
@@ -154,7 +154,8 @@ module.exports.create_post = async (req, res) => {
 			comments,
 			author: currentUserId,
 		});
-		console.log(author);
+		console.log(currentUserId, "currentUserId")
+		console.log("author");
 		res.status(201).redirect("/");
 	} catch (err) {
 		const errors = handleErrors(err);

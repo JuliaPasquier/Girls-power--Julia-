@@ -34,11 +34,12 @@
 
                                 <label for="comments">comments</label>
                                 <input type="text" name="comments" />
-
+                                <button>Envoyer</button>
+<!-- 
                                 <label for="author">author</label>
-                                <input type="text" name="author" />
-
-                                <input class="envoyer" type="submit" value="Envoyer">
+                                <input type="text" name="author" /> -->
+<!-- 
+                                <input class="envoyer" type="submit" value="Envoyer"> -->
                         </form>
                         <a class="btn" href="/">home page</a>
 
@@ -59,19 +60,19 @@
                                 const offerOrigin = form.offerOrigin.value;
                                 const offerStatus = form.offerStatus.value;
                                 const comments = form.comments.value;
-                                const author = form.author.value;
+                                
 
                                 try {
 
                                         const res = await fetch("/create-offer", {
                                                 method: "POST",
                                                 headers: { "Content-Type": "application/json" },
-                                                body: JSON.stringify({ jobTitle, url, employerName, employerEmail, employerPhone, employerAddress, offerOrigin, offerStatus, comments, author }),
+                                                body: JSON.stringify({ jobTitle, url, employerName, employerEmail, employerPhone, employerAddress, offerOrigin, offerStatus, comments}),
 
                                         });
 
                                         res.json()
-                                        if (res.status === 200) {
+                                        if (res.status === 201) {
                                                 window.location.href = "/";
                                         }
                                 }
