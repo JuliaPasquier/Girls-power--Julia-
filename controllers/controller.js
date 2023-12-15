@@ -157,7 +157,7 @@ module.exports.create_post = async (req, res) => {
 		console.log(currentUserId, "currentUserId");
 		console.log(newOffer, "newOffer");
 		console.log("author");
-		res.status(201).redirect("/");
+		res.status(201).json({ offer: newOffer._id });
 	} catch (err) {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });

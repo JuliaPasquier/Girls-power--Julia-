@@ -29,23 +29,23 @@ const requireAuth = (req, res, next) => {
 // check current user
 const checkUser = (req, res, next) => {
 	const token = req.cookies.jwt;
-	console.log('blue')
+	//console.log('blue')
 	if (token) {
-		console.log("vert");
+		//console.log("vert");
 		jwt.verify(token, secret, async (err, decodedToken) => {
 			if (err) {
-				console.log('jaune')
+				//console.log('jaune')
 				res.locals.user = null;
 				next();
 			} else {
-				console.log("rouge")
+				//console.log("rouge")
 				let user = await User.findById(decodedToken.id);
-				console.log("bleu")
+				//console.log("bleu")
 				res.locals.user = user;
-				console.log(user, "user")
+				//console.log(user, "user")
 				let offers = await Offer.find({ author: user._id });
 				res.locals.offers = offers;
-				console.log(offers, "iciiiiii")
+				//console.log(offers, "iciiiiii")
 				
 				next();
 			}

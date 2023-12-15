@@ -4,7 +4,6 @@
 
     <h1 class="Dashboard">Dashboard</h1>
     <a class="btn" href="/create-offer">Create a new job</a>
-    <a class="btn" href="/update-offer">Update a job</a>
 
     <form id="filter-form" action="/filter-offers" method="GET">
         <label for="filter">Filter by</label>
@@ -18,8 +17,9 @@
             <option value="asc">Asc.</option>
             <option value="dsc">Dsc.</option>
         </select>
+        <input class="btn" type="submit" value="Filter" />
     </form>
-  <a class="btn" href="/">Envoyer</a>
+
 
     <!-- AFFICHER OFFRES  -->
 
@@ -38,6 +38,7 @@
                     const filterValue = filter.value;
                     const orderValue = order.value;
 
-                    window.location.href = `/filter-offers?filter=${filterValue}&order=${orderValue}`;
+                    // Redirect to index.ejs with new filter parameters
+                    window.location.href = `/?filter=${filterValue}&order=${orderValue}`;
                 })
             </script>

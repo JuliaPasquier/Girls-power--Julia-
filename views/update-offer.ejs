@@ -47,7 +47,7 @@
             <label for="comments">Comments</label>
             <input type="text" name="comments" value="<%= offer.comments %>" />
 
-            <a class="btn" href="/" type="submit">Update</a>
+            <input class="btn" type="submit" value="Update" />
 
 
         </form>
@@ -70,8 +70,9 @@
                     const offerOrigin = form.offerOrigin.value;
                     const offerStatus = form.offerStatus.value;
                     const comments = form.comments.value;
-
+                    console.log("Je suis dans l'event listner")
                     try {
+                        console.log("Je lance le post")
                         const res = await fetch("/update-offer", {
                             method: "POST",
                             body: JSON.stringify({ jobTitle, url, employerName, employerEmail, employerPhone, employerAddress, offerOrigin, offerStatus, comments }),
