@@ -8,39 +8,40 @@
                         <form class="create-offer" method="POST">
                                 <h2 class="createdAt">Create Offers</h2>
 
-                                <label class="createTitle" for="jobTitle">title</label>
-                                <input type="text" name="title" required />
+                                <label for="jobTitle">title</label>
+                                <input id="jobTitle" type="text" name="jobTitle" required />
 
-                                <label class="createTitle" for="url">url</label>
-                                <input type="text" name="url" required />
+                                <label for="url">url</label>
+                                <input id="url" type="text" name="url" required />
 
-                                <label class="createTitle" for="employerName">employer name</label>
-                                <input type="text" name="employerName" required />
+                                <label for="employerName">employer name</label>
+                                <input id="employerName" type="text" name="employerName" required />
 
-                                <label class="createTitle" for="employerEmail">email</label>
-                                <input type="text" name="employerEmail" required />
+                                <label for="employerEmail">email</label>
+                                <input id="employerEmail" type="text" name="employerEmail" required />
 
-                                <label class="createTitle" for="employerPhone">phone</label>
-                                <input type="text" name="employerPhone" />
+                                <label for="employerPhone">phone</label>
+                                <input id="employerPhone" type="text" name="employerPhone" />
 
-                                <label class="createTitle" for="employerAddress">address</label>
-                                <input type="text" name="employerAddress" />
+                                <label for="employerAddress">address</label>
+                                <input id="employerAddress" type="text" name="employerAddress" />
 
-                                <label class="createTitle" for="offerOrigin">origin</label>
-                                <input type="text" name="offerOrigin" />
+                                <label for="offerOrigin">origin</label>
+                                <input id="offerOrigin" type="text" name="offerOrigin" />
 
-                                <label class="createTitle" for="offerStatus">status</label>
-                                <input type="text" name="offerStatus" />
+                                <label for="offerStatus">status</label>
+                                <input id="offerStatus" type="text" name="offerStatus" />
 
-                                <label class="createTitle" for="comments">comments</label>
-                                <input type="text" name="comments" />
+                                <label for="comments">comments</label>
+                                <input id="comments" type="text" name="comments" />
 
                                 <!-- 
                                 <label for="author">author</label>
                                 <input type="text" name="author" /> -->
-
+                                <a class="btn" href="/" type="submit" value="Envoyer">envoyer</a>
+                                <!-- <button type="submit">envoyer</button> -->
                         </form>
-                        <a class="btn" href="/" type="submit" value="Envoyer">envoyer</a>
+
                         <!-- <a class="btn" href="/">home page</a> -->
 
                 </div>
@@ -51,7 +52,7 @@
                         form.addEventListener('submit', async (e) => {
                                 e.preventDefault();
 
-                                const jobTitle = form.title.value;
+                                const jobTitle = form.jobTitle.value;
                                 const url = form.url.value;
                                 const employerName = form.employerName.value;
                                 const employerEmail = form.employerEmail.value;
@@ -61,9 +62,9 @@
                                 const offerStatus = form.offerStatus.value;
                                 const comments = form.comments.value;
 
-
+                                console.log("Je suis dans l'event listner")
                                 try {
-
+                                        console.log("Je lance le post")
                                         const res = await fetch("/create-offer", {
                                                 method: "POST",
                                                 headers: { "Content-Type": "application/json" },

@@ -154,7 +154,8 @@ module.exports.create_post = async (req, res) => {
 			comments,
 			author: currentUserId,
 		});
-		// console.log(currentUserId, "currentUserId")
+		console.log(currentUserId, "currentUserId");
+		console.log(newOffer, "newOffer");
 		console.log("author");
 		res.status(201).redirect("/");
 	} catch (err) {
