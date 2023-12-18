@@ -1,52 +1,62 @@
 <%- include('partials/header'); -%>
 
 
-    <div class="container">
-        <h1>Archives</h1>
-
-        <% if (offers.length) { %>
-            <div id="dashboard-grid" class="dashboard-grid">
-                <h3>Past Offers</h3>
-
-                <% offers.forEach((offer)=> { %>
-                    <% if (offer.offerStatus==="Archive" ) { %>
-                        <div class="offer-card">
-                            <p>
-                                <%= offer.offerStatus %>
-                            </p>
-                            <h4>
-                                <%= offer.jobTitle %>
-                            </h4>
-                            <p>
-                                <%= offer.employerName %>
-                            </p>
-                            <a href="/offers/<%= offer._id %>">See More</a>
-                        </div>
-                        <% } %>
-                            <% }); %>
-            </div>
-            <hr>
-            <% } else { %>
-                <p>No offer found.</p>
-                <% } %>
-    </div>
-
+  <div class="container">
+    <h1>Archives</h1>
 
     <% if (offers.length) { %>
+      <div id="dashboard-grid" class="dashboard-grid">
+        <h3>Past Offers</h3>
+        <p>Here you can find all the offers you have applied to.</p>
+
         <% offers.forEach((offer)=> { %>
-            <%= offer.offerStatus %>
-
+          <% if (offer.offerStatus==="Archive" ) { %>
+            <div class="offer-card">
+              <p>
+                <%= offer.offerStatus %>
+              </p>
+              <h4>
                 <%= offer.jobTitle %>
+              </h4>
+              <p>
+                <%= offer.employerName %>
+              </p>
+              <a href="/offers/<%= offer._id %>">See More</a>
+            </div>
+            <% } %>
+              <% }); %>
+      </div>
+      <hr>
+      <% } else { %>
+        <p>No offer found.</p>
+        <% } %>
+  </div>
 
-                    <%= offer.employerName %>
-                        <%= offer._id %>
+  <!-- 
+<% if (offers.length) { %>
+  <div id="dashboard-grid">
+    <h3>Archives</h3>
+    <% offers.forEach((offer)=> { %>
+      <div class="offer-card">
+        <p>
+          <%= offer.offerStatus %>
+        </p>
+        <h4>
+          <%= offer.jobTitle %>
+        </h4>
+        <p>
+          <%= offer.employerName %>
+        </p>
+        <a href="/offers/<%= offer._id %>">See More</a>
+      </div>
+      <% }); %>
+  </div>
+  <hr>
+  <% } else { %>
+    <p>No offer found.</p>
+    <% } %>
+      </div> -->
 
-                            <% }); %>
+  </div>
 
-                                <% } else { %>
-
-                                    <% } %>
-
-                                        </div>
-
-                                        <%- include('partials/footer'); -%>
+  <%- include('partials/footer'); -%>
