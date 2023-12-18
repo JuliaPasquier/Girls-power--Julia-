@@ -1,0 +1,52 @@
+<%- include('partials/header'); -%>
+
+
+    <div class="container">
+        <h1>Archives</h1>
+
+        <% if (offers.length) { %>
+            <div id="dashboard-grid" class="dashboard-grid">
+                <h3>Past Offers</h3>
+
+                <% offers.forEach((offer)=> { %>
+                    <% if (offer.offerStatus==="Archive" ) { %>
+                        <div class="offer-card">
+                            <p>
+                                <%= offer.offerStatus %>
+                            </p>
+                            <h4>
+                                <%= offer.jobTitle %>
+                            </h4>
+                            <p>
+                                <%= offer.employerName %>
+                            </p>
+                            <a href="/offers/<%= offer._id %>">See More</a>
+                        </div>
+                        <% } %>
+                            <% }); %>
+            </div>
+            <hr>
+            <% } else { %>
+                <p>No offer found.</p>
+                <% } %>
+    </div>
+
+
+    <% if (offers.length) { %>
+        <% offers.forEach((offer)=> { %>
+            <%= offer.offerStatus %>
+
+                <%= offer.jobTitle %>
+
+                    <%= offer.employerName %>
+                        <%= offer._id %>
+
+                            <% }); %>
+
+                                <% } else { %>
+
+                                    <% } %>
+
+                                        </div>
+
+                                        <%- include('partials/footer'); -%>

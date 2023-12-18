@@ -163,6 +163,7 @@ module.exports.create_post = async (req, res) => {
 		res.status(400).json({ errors });
 	}
 };
+
 //offers filter
 module.exports.filterOffersGet = async (req, res) => {
 	console.log("coucou");
@@ -232,14 +233,44 @@ module.exports.update_post = async (req, res) => {
 
 
 // offer_get
-
 module.exports.offer_get = async (req, res) => {
 	const id = req.params.id;
 	const offer = await Offer.findById(id);
 	res.render("offer", { offer });
-}
+};
+
 // Logout get
 module.exports.logout_get = (req, res) => {
 	res.cookie("jwt", "", { maxAge: 1 });
 	res.redirect("/login");
+};
+
+// Delete offer get
+module.exports.delete_get = async (req, res) => {
+	const id = req.params.id;
+	const offer = await Offer.findById(id);
+	res.render("delete-offer", { offer });
+};
+
+//archive offer get
+module.exports.archives_get = async (req, res) => {
+	const id = req.params.id;
+	const offer = await Offer.findById(id);
+	res.render("archive-offer", { offer });
+};
+
+//archive offer post
+module.exports.archives_post = async (req, res) => {
+    const id = req.params.id;
+    await Offer.updateOne(
+        { _id: id },
+        {
+            $set: {
+                offerStatus: "Archive",
+                updatedAt: Date.now(),
+            },
+        }
+    );
+    res.status(201).redirect("/");
+    console.log("Offer archived");
 };
