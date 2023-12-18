@@ -72,15 +72,15 @@ module.exports.register_post = async (req, res) => {
 		github,
 		password } = req.body;
 	try {
-		const profilePictureUrl = await handleProfilePictureUpload(req, res);
-		const resumeUrl = await handleResumeUpload(req, res);
+		// const profilePictureUrl = await handleProfilePictureUpload(req, res);
+		// const resumeUrl = await handleResumeUpload(req, res);
 		const user = await User.create({
 			firstName,
 			lastName,
 			email,
 			github,
-			profilePictureUrl,
-			resumeUrl,
+			// profilePictureUrl,
+			// resumeUrl,
 			password
 		});
 		const token = createToken(user._id);
@@ -230,7 +230,6 @@ module.exports.update_post = async (req, res) => {
 };
 
 
-
 // offer_get
 module.exports.offer_get = async (req, res) => {
 	const id = req.params.id;
@@ -238,17 +237,14 @@ module.exports.offer_get = async (req, res) => {
 	res.render("offer", { offer });
 };
 
-// Logout get
-module.exports.logout_get = (req, res) => {
-	res.cookie("jwt", "", { maxAge: 1 });
-	res.redirect("/login");
-};
 
 // Delete offer get
-module.exports.delete_get = async (req, res) => {
+module.exports.delete_offer = async (req, res) => {
 	const id = req.params.id;
-	const offer = await Offer.findById(id);
-	res.render("delete-offer", { offer });
+	await Offer.deleteOne({ _id: id });
+	console.log("Offer deleted");
+	res.redirect("/");
+
 };
 
 //archive offer get
@@ -272,4 +268,10 @@ module.exports.archives_post = async (req, res) => {
     );
     res.status(201).redirect("/");
     console.log("Offer archived");
+};
+
+// Logout get
+module.exports.logout_get = (req, res) => {
+	res.cookie("jwt", "", { maxAge: 1 });
+	res.redirect("/login");
 };

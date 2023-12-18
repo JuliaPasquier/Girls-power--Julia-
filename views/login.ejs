@@ -1,27 +1,22 @@
 <%- include('partials/header'); -%>
 
-
+<h1 class="title_login">Login</h1>
     <div class="container_login">
         <form method="POST">
-            <h1 class="title"></h1>
+           
 
             <label for="email"></label>
-            <input type="text" name="email" id="email" placeholder="Email""></input>
+            <input type="text" name="email" id="email" placeholder="Email"></input>
             <div class=" email error">
-    </div>
+            </div>
 
-    <label for="password"></label>
-    <input type="password" name="password" id="password" placeholder="Password"></input>
-    <div class="password error"></div>
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="Password"></input>
+            <div class="password error"></div>
 
-    <input type="submit"></input>
-    <a class="register" href="/register">register</a>
-    </form>
-
-    
-    <div class="drop drop-1"></div>
-    <div class="drop drop-2"></div>
-    <div class="drop drop-4"></div>
+            <input type="submit"></input>
+            <a class="register" href="/register">register</a>
+        </form>
     </div>
 
     <%- include('partials/footer'); -%>

@@ -1,35 +1,36 @@
 <%- include('partials/header'); -%>
+    <div class="container_login">
+        <form method="POST">
+            <h2 class="title_register">Register</h2>
 
-    <form class="register" method="POST">
-        <h2 class="title_register">Register</h2>
+            <label for="firstname">firstname</label>
+            <input type="text" name="firstName" required />
 
-        <label for="firstname">firstname</label>
-        <input type="text" name="firstName" required />
+            <label for="lastname">lastname</label>
+            <input type="text" name="lastName" required />
 
-        <label for="lastname">lastname</label>
-        <input type="text" name="lastName" required />
+            <label for="email">email</label>
+            <input type="text" name="email" required />
 
-        <label for="email">email</label>
-        <input type="text" name="email" required />
+            <label for="github">github</label>
+            <input type="text" name="github" />
 
-        <label for="github">github</label>
-        <input type="text" name="github" />
+            <label for="profilePicture">profilePicture</label>
+            <input type="file" name="profilePicture" id="profilePicture" />
 
-        <label for="profilePicture">profilePicture</label>
-        <input type="file" name="profilePicture" id="profilePicture" />
+            <label for="resume">CV</label>
+            <input type="file" name="resume" id="resume" />
 
-        <label for="resume">CV</label>
-        <input type="file" name="resume" id="resume" />
+            <label for="password">password</label>
+            <input type="password" name="password" required />
 
-        <label for="password">password</label>
-        <input type="password" name="password" required />
+            <label for="repeatPassword"> repeat password</label>
+            <input type="password" required />
 
-        <label for="repeatPassword"> repeat password</label>
-        <input type="password" required />
-
-        <button type="submit">Register</button>
-        <a class="btn" href="/login">home page</a>
-    </form>
+            <button class="btn">Register</button>
+            <a class="btn" href="/login">home page</a>
+        </form>
+    </div>
 
     <script>
         const form = document.querySelector('form');
@@ -45,7 +46,7 @@
             const password = form.password.value;
             // const repeatPassword = form.repeatPassword.value;
 
-  
+
             try {
                 const res = await fetch("/register", {
                     method: "POST",
@@ -58,6 +59,9 @@
                     res.json()
                 if (res.status === 201) {
                     window.location.href = "/login";
+                }
+                else {
+                    location.assign("/register");
                 }
             }
             catch (err) {

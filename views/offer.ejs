@@ -1,24 +1,41 @@
 <%- include('partials/header') %>
 
 
-    <a class="btn" href="/">Back to the dashboard</a>
+    <a class="btn" href="/">home</a>
     <h1 class="title">OFFER</h1>
     <hr>
     <div id="offers-grid">
-        <% offers.forEach(function(offer) { %>
-            <div class="offer-card">
-                <p><%= offer.jobTitle %></p>
-                <p><%= offer.url %></p>
-                <p><%= offer.employerName %></p>
-                <p><%= offer.employerEmail %></p>
-                <p><%= offer.employerPhone %></p>
-                <p><%= offer.employerAddress %></p>
-                <p><%= offer.offerOrigin %></p>
-                <p><%= offer.offerStatus %></p>
-                <p><%= offer.comments %></p>
-                <a class="btn" href="/update-offer/<%= offer._id %>">UPDATE</a>
-            </div>
-        <% }); %>
+        <div class="offer-card">
+            <p>
+                <%= offer.jobTitle %>
+            </p>
+            <p>
+                <%= offer.url %>
+            </p>
+            <p>
+                <%= offer.employerName %>
+            </p>
+            <p>
+                <%= offer.employerEmail %>
+            </p>
+            <p>
+                <%= offer.employerPhone %>
+            </p>
+            <p>
+                <%= offer.employerAddress %>
+            </p>
+            <p>
+                <%= offer.offerOrigin %>
+            </p>
+            <p>
+                <%= offer.offerStatus %>
+            </p>
+            <p>
+                <%= offer.comments %>
+            </p>
+            <a class="btn" href="/update-offer/<%= offer._id %>">UPDATE</a>
+            <a class="btn" href="/delete/<%= offer._id %>">DELETE</a>
+        </div>
     </div>
 
     <%- include('partials/footer') %>

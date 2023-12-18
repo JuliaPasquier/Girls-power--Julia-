@@ -34,7 +34,7 @@ router.post("/update-offer/:id", requireAuth, controller.update_post);
 router.get("/offer/:id", requireAuth, controller.offer_get);
 
 // Delete an offer
-router.get("/delete/:id", requireAuth, controller.delete_get);
+router.get("/delete/:id", requireAuth, controller.delete_offer);
 
 //archive offer
 router.get("/archives/:id", requireAuth, controller.archives_get);

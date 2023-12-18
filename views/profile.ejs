@@ -1,7 +1,7 @@
 <%- include('partials/header'); -%>
 
-    <div class="container">
-        <h1>My profile</h1>
+    <div class="container_profil">
+        <h1 class="myProfil">My profile</h1>
         <hr>
         <p>Full name: <%= user.firstName %>
                 <%= user.lastName %>
@@ -12,11 +12,13 @@
         </p>
         <p>Profile picture: <%= user.profilePicture %>
         </p>
-        <button><a href="">Download Resume: <%= user.resume %></a></button>
-        <button><a href="">Upload New Resume</a></button>
-        <button><a href="">Change password</a></button>
-        <hr>
-        <a href="/">Back to the dashboard</a></p>
+        <div class="btn_profil">
+            <button class="btn_download"><a href="">Download Resume: <%= user.resume %></a></button>
+            <button class="btn_download"><a href="">Upload New Resume</a></button>
+            <button class="btn_download"><a href="">Change password</a></button>
+        </div>
+    
+        <a class="btn" href="/">Home page</a>
     </div>
 
 

@@ -48,8 +48,6 @@
             <input type="text" name="comments" value="<%= offer.comments %>" />
 
             <input class="btn" type="submit" value="Update" />
-            <input class="btn" type="submit" value="delete" />
-
         </form>
 
 
@@ -86,6 +84,26 @@
                     catch (err) {
                         console.log(err);
 
+                    }
+                });
+            </script>
+
+                
+            <script>
+                const deleteBtn = document.querySelector('.btn[value="Delete"]');
+                deleteBtn.addEventListener("", async () => {
+                    try {
+                        const res = await fetch("/delete/:id", {
+                            method: "DELETE",
+                            body: JSON.stringify({ offerId: "<%= offer._id %>" }),
+                            headers: { "Content-Type": "application/json" },
+                        });
+                        res.json();
+                        if (res.status === 200) {
+                            window.location.href = "/";
+                        }
+                    } catch (err) {
+                        console.log(err);
                     }
                 });
             </script>

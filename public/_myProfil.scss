@@ -1,0 +1,47 @@
+.container_profil {
+    position: relative;
+    height: 100vh;
+    font-family: arial, sans-serif;
+    align-items: center;
+    text-align: center;
+
+}
+
+.myProfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+hr {
+    margin-bottom: 50px;
+}
+
+.btn_download {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    display: flex;
+
+}
+
+
+.btn_download:hover {
+    color: pink;
+    background-color: white;
+    text-transform: uppercase;
+}
+
+.btn_profil{
+    margin-bottom: 50px;
+}

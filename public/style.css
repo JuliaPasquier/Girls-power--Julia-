@@ -1,5 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Dhurjati&family=Indie+Flower&family=Inter:wght@400;800&family=Pacifico&family=Pixelify+Sans:wght@400;600&family=Preahvihear&family=Raleway&family=Roboto&display=swap");
 .container_login {
   position: relative;
+  font-family: "Dhurjati", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form {
@@ -14,6 +19,7 @@ form {
   -moz-backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
+  margin-bottom: 700px;
 }
 
 p {
@@ -27,12 +33,11 @@ p {
 
 a {
   text-decoration: none;
-  color: #ddd;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 a:hover {
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2509803922);
+  color: pink;
 }
 
 a:active {
@@ -80,56 +85,6 @@ input[type=submit] {
   color: #fff;
 }
 
-.drop {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  transition: all 0.2s ease;
-}
-
-.drop-1 {
-  height: 80px;
-  width: 80px;
-  top: -20px;
-  left: -40px;
-  z-index: -1;
-}
-
-.drop-2 {
-  height: 80px;
-  width: 80px;
-  bottom: -30px;
-  right: -10px;
-}
-
-.drop-3 {
-  height: 100px;
-  width: 100px;
-  bottom: 120px;
-  right: -50px;
-  z-index: -1;
-}
-
-.drop-4 {
-  height: 120px;
-  width: 120px;
-  top: -60px;
-  right: -60px;
-}
-
-.drop-5 {
-  height: 60px;
-  width: 60px;
-  bottom: 170px;
-  left: 90px;
-  z-index: -1;
-}
-
 .btn {
   background: transparent;
   border: none;
@@ -149,6 +104,195 @@ input[type=submit] {
   margin-bottom: 2em;
 }
 
+.title_login {
+  font-size: 3rem;
+  font-family: "Dhurjati", sans-serif;
+  font-weight: 500;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container_register {
+  position: relative;
+  height: 100vh;
+  font-family: arial, sans-serif;
+  align-items: center;
+}
+
+.container_dashboard {
+  position: relative;
+  align-items: center;
+}
+
+form#filter-form {
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 40px;
+  gap: 20px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.title_dashboard {
+  font-size: 3rem;
+  font-family: "Dhurjati", sans-serif;
+  font-weight: 500;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin-top: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+button.btn {
+  text-align: center;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 0;
+}
+
+.title_offers {
+  font-size: 3rem;
+  font-family: "Dhurjati", sans-serif;
+  font-weight: 500;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-bottom: 200px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 3rem;
+  height: 320px;
+  margin: 1rem;
+}
+
+.grid-item:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 3rem;
+  height: 320px;
+  margin: 1rem;
+}
+
+.jobTitle {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding-bottom: 20px;
+}
+
+.logo {
+  left: 0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.username {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container_profil {
+  position: relative;
+  height: 100vh;
+  font-family: arial, sans-serif;
+  align-items: center;
+  text-align: center;
+}
+
+.myProfil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+hr {
+  margin-bottom: 50px;
+}
+
+.btn_download {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 0;
+  display: flex;
+}
+
+.btn_download:hover {
+  color: pink;
+  background-color: white;
+  text-transform: uppercase;
+}
+
+.btn_profil {
+  margin-bottom: 50px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -157,9 +301,16 @@ input[type=submit] {
 
 body {
   background: linear-gradient(45deg, #fc466b, #3f5efb);
-  height: 100vh;
   font-family: arial, sans-serif;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.btn:hover {
+  color: pink;
+  background-color: white;
+  text-transform: uppercase;
 }/*# sourceMappingURL=style.css.map */

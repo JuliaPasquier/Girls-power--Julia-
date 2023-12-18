@@ -1,18 +1,34 @@
 @import "login";
 @import "register";
 @import "index";
+@import "offers-grid";
+@import "navbar";
+@import "myProfil";
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-};
+}
+
+;
 
 body {
     background: linear-gradient(45deg, #fc466b, #3f5efb);
-    height: 100vh;
     font-family: arial, sans-serif;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-};
+    flex-direction: column;
+}
+
+;
+
+.btn:hover {
+    color: pink;
+    background-color: white;
+    text-transform: uppercase;
+}
+
+;

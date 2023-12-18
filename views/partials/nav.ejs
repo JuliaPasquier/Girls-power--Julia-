@@ -1,13 +1,16 @@
-<nav>
-    <div class="logo">LOGO</div>
+<nav class="navBar">
+    <div class="logo">Job Tracker</div>
     <div class="profile">
         <% if(user) { %>
             <div class="username">
                 <%= user.firstName + ' ' + user.lastName %>
             </div>
-            <a class="btn" href="/profile">My Profile</a>
-            <a class="btn" href="/logout">Logout</a>
+            
+            <div class="btn_nav">
+            <a class="btn" href="/profile">My Profile</a> 
             <a class="btn" href="/">Home page</a>
+            <a class="btn" href="/logout">Logout</a>
+        </div>
 
             <% } %>
     </div>
