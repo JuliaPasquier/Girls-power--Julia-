@@ -3,7 +3,6 @@ require('dotenv').config();
 const User = require("../models/User");
 const Offer = require("../models/Offer");
 const jwt = require("jsonwebtoken");
-const { handleProfilePictureUpload, handleResumeUpload } = require('../middleware/uploadMiddleware');
 const secret = process.env.JWT_SECRET;
 const maxAge = 3 * 24 * 60 * 60;
 let currentUserId;

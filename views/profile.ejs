@@ -1,28 +1,25 @@
-<%- include('partials/header') %>
+<%- include('partials/header'); -%>
+
+    <div class="container">
+        <h1>My profile</h1>
+        <hr>
+        <p>Full name: <%= user.firstName %>
+                <%= user.lastName %>
+        </p>
+        <p>Email: <%= user.email %>
+        </p>
+        <p>GitHub: <%= user.github %>
+        </p>
+        <p>Profile picture: <%= user.profilePicture %>
+        </p>
+        <button><a href="">Download Resume: <%= user.resume %></a></button>
+        <button><a href="">Upload New Resume</a></button>
+        <button><a href="">Change password</a></button>
+        <hr>
+        <a href="/">Back to the dashboard</a></p>
+    </div>
 
 
-    <%- include('partials/nav') %>
 
-        <h1 class="title">My profile</h1>
 
-        <div class="profil">
-            <div class="picture"></div>
-            <div class="info">
-                <div class="full-name">Full name</div>
-                <div class="email">Email</div>
-                <div class="github">GitHub</div>
-            </div>
-        </div>
-        <div class="buttons">
-            <div class="dl_cv">
-
-            </div>
-            <div class="update_cv">
-
-            </div>
-            <div class="change_password">
-            </div>
-            <!-- <a class="btn" href="/">home page</a> -->
-        </div>
-
-        <%- include('partials/footer') %>
+    <%- include('partials/footer'); -%>

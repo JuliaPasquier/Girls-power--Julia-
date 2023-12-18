@@ -1,7 +1,7 @@
 <%- include('partials/header'); -%>
 
-    <form method="POST">
-        <h2 class="title">Register</h2>
+    <form class="register" method="POST">
+        <h2 class="title_register">Register</h2>
 
         <label for="firstname">firstname</label>
         <input type="text" name="firstName" required />
@@ -45,11 +45,7 @@
             const password = form.password.value;
             // const repeatPassword = form.repeatPassword.value;
 
-            // cloudinary.uploader.upload(profilePicture, function (error, result) {
-            //     console.log(result, error);
-            // });
-
-
+  
             try {
                 const res = await fetch("/register", {
                     method: "POST",

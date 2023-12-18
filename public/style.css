@@ -1,21 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.container {
+.container_login {
   position: relative;
-}
-
-body {
-  background: linear-gradient(45deg, #fc466b, #3f5efb);
-  height: 100vh;
-  font-family: arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
 }
 
 form {
@@ -48,7 +32,7 @@ a {
 }
 
 a:hover {
-  text-shadow: 2px 2px 6px #00000040;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2509803922);
 }
 
 a:active {
@@ -75,17 +59,21 @@ input {
 }
 
 input:hover,
-input[type="text"]:focus,
-input[type="text"]:focus {
+input[type=text]:focus,
+input[type=text]:focus {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
 }
 
-input[type="submit"] {
+input[type=submit] {
   margin-top: 10px;
   width: 150px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+::-moz-placeholder {
+  color: #fff;
 }
 
 ::placeholder {
@@ -103,6 +91,7 @@ input[type="submit"] {
   position: absolute;
   transition: all 0.2s ease;
 }
+
 .drop-1 {
   height: 80px;
   width: 80px;
@@ -140,25 +129,37 @@ input[type="submit"] {
   left: 90px;
   z-index: -1;
 }
+
 .btn {
   background: transparent;
   border: none;
-  border-left: 1px solid rgba(255, 255, 255, .3);
-  border-top: 1px solid rgba(255, 255, 255, .3);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1rem;
   width: 100px;
   border-radius: 50px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   -moz-backdrop-filter: blur(5px);
-  box-shadow: 4px 4px 60px rgba(0, 0, 0, .2);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
   color: white;
   font-weight: 500;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
-  transition: all .3s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
   margin-bottom: 2em;
 }
 
-.register:hover {
-  text-decoration: underline;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  background: linear-gradient(45deg, #fc466b, #3f5efb);
+  height: 100vh;
+  font-family: arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
