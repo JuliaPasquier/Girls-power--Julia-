@@ -3,53 +3,53 @@
 
         <%- include('partials/nav') %>
 
+                <h2 class="titleCreate">Create Offers</h2>
 
-                <div class="offers">
-                        <form class="container" method="POST">
-                                <h1 class="title">Create Offers</h1>
+                <form class="containerCreate" method="POST">
 
-                                <label for="jobTitle">title</label>
-                                <input id="jobTitle" type="text" name="jobTitle" required />
 
-                                <label for="url">url</label>
-                                <input id="url" type="text" name="url" required />
+                        <label for="jobTitle">title</label>
+                        <input id="jobTitle" type="text" name="jobTitle" required />
 
-                                <label for="employerName">employer name</label>
-                                <input id="employerName" type="text" name="employerName" required />
+                        <label for="url">url</label>
+                        <input id="url" type="text" name="url" required />
 
-                                <label for="employerEmail">email</label>
-                                <input id="employerEmail" type="text" name="employerEmail" required />
+                        <label for="employerName">employer name</label>
+                        <input id="employerName" type="text" name="employerName" required />
 
-                                <label for="employerPhone">phone</label>
-                                <input id="employerPhone" type="text" name="employerPhone" />
+                        <label for="employerEmail">email</label>
+                        <input id="employerEmail" type="text" name="employerEmail" required />
 
-                                <label for="employerAddress">address</label>
-                                <input id="employerAddress" type="text" name="employerAddress" />
+                        <label for="employerPhone">phone</label>
+                        <input id="employerPhone" type="text" name="employerPhone" />
 
-                                <label for="offerOrigin">origin</label>
-                                <select id="offerOrigin">
-                                        <option value="poleEmploi">linkedin</option>
-                                        <option value="indeed">indeed</option>
-                                        <option value="linkedin">forem</option>
-                                        <option value="autre">autre</option>
-                                </select>
+                        <label for="employerAddress">address</label>
+                        <input id="employerAddress" type="text" name="employerAddress" />
 
-                                <label for="offerStatus">status</label>
-                                <select id="offerStatus">
-                                        <option value="pending">pending</option>
-                                        <option value="accepted">accepted</option>
-                                        <option value="refused">refused</option>
-                                </select>
+                        <label class="title" for="offerOrigin">Origin</label>
+                        <select id="offerOrigin">
+                                <option value="poleEmploi">linkedin</option>
+                                <option value="indeed">indeed</option>
+                                <option value="linkedin">forem</option>
+                                <option value="autre">autre</option>
+                        </select>
 
-                                <label for="comments">comments</label>
-                                <input id="comments" type="text" name="comments" />
+                        <label class="title" for="offerStatus">Status</label>
+                        <select id="offerStatus">
+                                <option value="pending">pending</option>
+                                <option value="accepted">accepted</option>
+                                <option value="refused">refused</option>
+                        </select>
 
-                                <input class="btn" type="submit" value="Envoyer" />
-                             
+                        <label for="comments">comments</label>
+                        <input id="comments" type="text" name="comments" /><br>
 
-                                <!-- <a class="btn" href="/" type="submit" value="Envoyer">envoyer</a> -->
+                        <input class="btn" type="submit" value="Envoyer" />
 
-                        </form>
+
+                        <!-- <a class="btn" href="/" type="submit" value="Envoyer">envoyer</a> -->
+
+                </form>
 
 
                 </div>
@@ -70,9 +70,9 @@
                                 const offerStatus = form.offerStatus.value;
                                 const comments = form.comments.value;
 
-                                
+
                                 try {
-                                       
+
                                         const res = await fetch("/create-offer", {
                                                 method: "POST",
                                                 headers: { "Content-Type": "application/json" },

@@ -26,7 +26,6 @@ p {
   font-weight: 500;
   opacity: 0.7;
   font-size: 1.4rem;
-  margin-bottom: 60px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -122,8 +121,9 @@ input[type=submit] {
   align-items: center;
 }
 
-.container_dashboard {
-  margin-top: 20%;
+.btnRegister {
+  color: white;
+  font-size: 1rem;
 }
 
 form#filter-form {
@@ -142,11 +142,11 @@ form#filter-form {
   font-weight: 500;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
   margin-top: 40px;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 30px;
+  margin-top: 20%;
 }
 
 button.btn {
@@ -176,7 +176,6 @@ select#filter {
   font-weight: 500;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
   margin-top: 40px;
   text-transform: uppercase;
 }
@@ -184,7 +183,7 @@ select#filter {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-bottom: 200px;
+  margin-bottom: 8.1%;
 }
 
 .grid-item {
@@ -198,7 +197,19 @@ select#filter {
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 3rem;
-  margin: 1rem;
+}
+.grid-item .jobTitle {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+.grid-item .offerStatus {
+  margin-bottom: 3rem;
+}
+.grid-item .offerName {
+  margin-bottom: 1rem;
 }
 
 .grid-item:hover {
@@ -213,12 +224,39 @@ select#filter {
   text-align: center;
 }
 
-.jobTitle {
-  font-size: 2rem;
-  font-weight: 500;
+form.containerCreate {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  width: 75%;
+}
+
+h2.titleCreate {
+  color: white;
+  text-align: center;
   margin-bottom: 20px;
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.selectOrigin {
+  width: 9%;
+}
+
+select#offerOrigin {
+  width: 9%;
 }
 
 .navBar {
@@ -255,11 +293,16 @@ select#filter {
 }
 
 .container_profil {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  height: 100vh;
   font-family: arial, sans-serif;
   align-items: center;
   text-align: center;
+  color: white;
+  gap: 20px;
+  margin-top: 10%;
+  margin-bottom: 11.9%;
 }
 
 .myProfil {
@@ -271,10 +314,12 @@ select#filter {
   color: white;
   text-transform: uppercase;
   margin-bottom: 30px;
+  gap: 20px;
 }
 
 hr {
-  margin-bottom: 50px;
+  width: 100%;
+  margin-bottom: 10%;
 }
 
 .btn_download {
@@ -287,6 +332,11 @@ hr {
   display: flex;
   margin: 0;
   display: flex;
+  border: none;
+  padding: 6px;
+  border-radius: 10px;
+  width: 20vw;
+  background-color: transparent;
 }
 
 .btn_download:hover {
@@ -297,6 +347,24 @@ hr {
 
 .btn_profil {
   margin-bottom: 50px;
+}
+
+.btnHome {
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  margin-bottom: 2em;
 }
 
 h1.title_offer {
@@ -310,9 +378,19 @@ h1.title_offer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 50%;
   color: white;
   text-transform: uppercase;
+}
+
+form.containerCreate {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  width: 75%;
+  margin-top: 10%;
+  margin-bottom: 16.2%;
 }
 
 form.update-offer {
@@ -340,6 +418,11 @@ select#offerOrigin {
   width: 9%;
 }
 
+.containerFooter {
+  position: fixed;
+  bottom: 0;
+}
+
 p.footer {
   color: white;
   font-weight: 500;
@@ -357,11 +440,11 @@ p.footer {
 body {
   background: linear-gradient(45deg, #fc466b, #3f5efb);
   font-family: arial, sans-serif;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 9%;
 }
 
 .btn:hover {

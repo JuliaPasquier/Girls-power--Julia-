@@ -1,54 +1,45 @@
-.container_dashboard {
-margin-top: 20%;
-}
 
-;
 
 form#filter-form {
-    height: 10vh;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    color: white;
-    gap: 20px;
-    align-items: center
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+  gap: 20px;
+  align-items: center;
 }
-
-;
 
 .title_dashboard {
-    font-size: 3rem;
-    font-family: 'Dhurjati', sans-serif;
-    font-weight: 500;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    margin-top: 40px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 30px
+  font-size: 3rem;
+  font-family: "Dhurjati", sans-serif;
+  font-weight: 500;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  margin-top: 20%;
 }
 
-;
-
 button.btn {
-    text-align: center;
-    text-transform: uppercase;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 0;
 }
 
 select#order {
-    border: transparent;
-    border-radius: 10px;
-    width: 3vw;
+  border: transparent;
+  border-radius: 10px;
+  width: 3vw;
 }
 
-
 select#filter {
-    border: transparent;
-    border-radius: 10px;
-    width: 3vw;
+  border: transparent;
+  border-radius: 10px;
+  width: 3vw;
 }

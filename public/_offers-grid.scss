@@ -5,14 +5,13 @@
     font-weight: 500;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
     margin-top: 40px;
     text-transform: uppercase;
 }
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-bottom: 200px;
+    margin-bottom: 8.1%;
 }
 .grid-item{
     background-color: rgba(255, 255, 255, 0.3);
@@ -25,7 +24,19 @@
     box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 3rem;
-    margin: 1rem;
+    .jobTitle{
+        font-size: 2rem;
+        font-weight: 500;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+    }
+    .offerStatus {
+        margin-bottom: 3rem;
+    }
+    .offerName{
+        margin-bottom: 1rem;;
+    }
 }
 .grid-item:hover {
     background-color: rgba(255, 255, 255, 0.5);
@@ -38,11 +49,35 @@
     box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
-.jobTitle{
-    font-size: 2rem;
-    font-weight: 500;
+
+form.containerCreate {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    text-transform: uppercase;
+    width: 75%;
 }
 
+h2.titleCreate{
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    text-transform: uppercase;
+}
+.offer-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+.selectOrigin {
+    width: 9%;
+}
+select#offerOrigin {
+    width: 9%;
+}
