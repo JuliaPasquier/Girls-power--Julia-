@@ -1,0 +1,22 @@
+form.update-offer {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    width: 75%;
+}
+h2.title_update{
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    text-transform: uppercase;
+}
+
+select#offerStatus {
+    width: 9%;
+}
+select#offerOrigin {
+    width: 9%;
+}
