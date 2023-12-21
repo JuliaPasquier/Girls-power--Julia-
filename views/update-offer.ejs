@@ -11,11 +11,11 @@
             <input type="text" name="jobTitle" value="<%= offer.jobTitle %>" required />
 
 
-            <label class="title"  for="url">Website</label>
+            <label class="title" for="url">Website</label>
             <input type="text" name="url" value="<%= offer.url %>" required />
 
 
-            <label class="title"  for="employerName">Name</label>
+            <label class="title" for="employerName">Name</label>
             <input type="text" name="employerName" value="<%= offer.employerName %>" required />
 
 
@@ -30,28 +30,29 @@
             <label class="title" for="employerAddress">Address</label>
             <input type="text" name="employerAddress" value="<%= offer.employerAddress %>" />
 
+            <div class="label">
+                <label class="title" for="offerOrigin">Origin</label>
+                <select name="offerOrigin" class="btn" id="offerOrigin" value="<%= offer.offerOrigin %>">
+                    <option value="freeApply">Free apply</option>
+                    <option value="jobOffer">job offer</option>
+                </select>
 
-            <label class="title" for="offerOrigin">Origin</label>
-            <select name="offerOrigin" class="btn" id="offerOrigin" value="<%= offer.offerOrigin %>">
-                <option value="freeApply">Free apply</option>
-                <option value="jobOffer">job offer</option>
-            </select>
+                <label class="title" for="offerStatus">Status</label>
 
-            <label class="title" for="offerStatus">Status</label>
-
-            <select name="offerStatus" class="btn" id="offerStatus" value="<%= offer.offerStatus %>">
-                <option value="pending">Pending</option>
-                <option value="interested">Interested</option>
-                <option value="CV">Resume</option>
-                <option value="Negative">Negative</option>
-                <option value="Interview">Interview</option>
-            </select>
-
+                <select name="offerStatus" class="btn" id="offerStatus" value="<%= offer.offerStatus %>">
+                    <option value="pending">Pending</option>
+                    <option value="interested">Interested</option>
+                    <option value="CV">Resume</option>
+                    <option value="Negative">Negative</option>
+                    <option value="Interview">Interview</option>
+                </select>
+            </div>
 
             <label class="title" for="comments">Comments</label>
             <input type="text" name="comments" value="<%= offer.comments %>" /> <br>
-
-            <input class="btn" type="submit" value="Enregistrer" />
+            <div class="btnCreate">
+                <input class="btn" type="submit" value="Enregistrer" />
+            </div>
         </form>
 
 
@@ -92,7 +93,7 @@
                 });
             </script>
 
-                
+
             <script>
                 const deleteBtn = document.querySelector('.btn[value="Delete"]');
                 deleteBtn.addEventListener("", async () => {

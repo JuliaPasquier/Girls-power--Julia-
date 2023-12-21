@@ -1,11 +1,11 @@
 <%- include('partials/header') %>
 
-   <h2 class="titleCreate">Create Offers</h2>
+        <h2 class="titleCreate">Create Offers</h2>
         <%- include('partials/nav') %>
 
 
-             
 
+<div class="formContainer">
                 <form class="formCreate" method="POST">
 
 
@@ -27,31 +27,33 @@
                         <label for="employerAddress">address</label>
                         <input id="employerAddress" type="text" name="employerAddress" />
 
-                        <label class="title" for="offerOrigin">Origin</label>
-                        <select id="offerOrigin">
-                                <option value="poleEmploi">linkedin</option>
-                                <option value="indeed">indeed</option>
-                                <option value="linkedin">forem</option>
-                                <option value="autre">autre</option>
-                        </select>
-
-                        <label class="title" for="offerStatus">Status</label>
-                        <select id="offerStatus">
-                                <option value="pending">pending</option>
-                                <option value="accepted">accepted</option>
-                                <option value="refused">refused</option>
-                        </select>
+                        <div class="label">
+                                <label class="title" for="offerOrigin">Origin</label>
+                                <select id="offerOrigin">
+                                        <option value="poleEmploi">linkedin</option>
+                                        <option value="indeed">indeed</option>
+                                        <option value="linkedin">forem</option>
+                                        <option value="autre">autre</option>
+                                </select>
+                                <label class="title" for="offerStatus">Status</label>
+                                <select id="offerStatus">
+                                        <option value="pending">pending</option>
+                                        <option value="accepted">accepted</option>
+                                        <option value="refused">refused</option>
+                                </select>
+                        </div>
 
                         <label for="comments">comments</label>
                         <input id="comments" type="text" name="comments" /><br>
-
+<div class="btnCreate">
                         <input class="btn" type="submit" value="Envoyer" />
+</div>
 
 
                         <!-- <a class="btn" href="/" type="submit" value="Envoyer">envoyer</a> -->
 
                 </form>
-
+</div>
 
                 </div>
 

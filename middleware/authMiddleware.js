@@ -16,7 +16,7 @@ const requireAuth = (req, res, next) => {
 				console.log(err.message);
 				res.redirect("/login");
 			} else {
-				// req.user = decodedToken.id;
+				req.user = decodedToken.id;
 				console.log(decodedToken);
 				next();
 			}
@@ -38,7 +38,8 @@ const checkUser = (req, res, next) => {
 				//console.log('jaune')
 				res.locals.user = null;
 				next();
-			} else {
+			} 
+			else {
 				//console.log("rouge")
 				let user = await User.findById(decodedToken.id);
 				//console.log("bleu")

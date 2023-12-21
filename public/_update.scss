@@ -9,10 +9,12 @@ h2.titleUpdate{
   }
 
 .formOffer {
+    display: flex;
+    flex-direction: column;
     background: rgba(255, 255, 255, 0.3);
     color: white;
     font-size: 20px;
-    text-transform: uppercase ;
+    text-transform: uppercase;
     padding: 3rem;
     border-radius: 20px;
     border-left: 1px solid rgba(255, 255, 255, 0.3);
@@ -22,15 +24,7 @@ h2.titleUpdate{
     -moz-backdrop-filter: blur(10px);
     box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin: 0 auto; // Center horizontally
-    width: 85%;
-    margin-top: 12%;
-}
-
-
-select#offerStatus {
-    width: 9%;
-}
-select#offerOrigin {
-    width: 9%;
+    margin: auto; // Center horizontally
+    margin-top: 100px;
+    width: 40%;
 }

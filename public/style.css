@@ -37,6 +37,8 @@
 }
 
 .formRegister {
+  display: flex;
+  flex-direction: column;
   background: rgba(255, 255, 255, 0.3);
   color: white;
   font-size: 20px;
@@ -50,9 +52,9 @@
   -moz-backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin: 0 auto;
-  width: 75%;
-  margin-top: 12%;
+  margin: auto;
+  margin-top: 100px;
+  width: 40%;
 }
 
 .btn_Register {
@@ -418,7 +420,16 @@ h2.titleCreate {
   text-transform: uppercase;
 }
 
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  place-items: center;
+}
+
 .formCreate {
+  display: flex;
+  flex-direction: column;
   background: rgba(255, 255, 255, 0.3);
   color: white;
   font-size: 20px;
@@ -432,39 +443,50 @@ h2.titleCreate {
   -moz-backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin: 0 auto;
-  width: 85%;
-  margin-top: 12%;
+  margin: auto;
+  margin-top: 100px;
+  width: 40%;
 }
 
-.btnCreate {
-  background-color: transparent;
-  color: white;
-  font-weight: 500;
-  width: 20vw;
-  text-align: center;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 6px;
-  border: none;
-  border-radius: 10px;
+.btnForm {
+  transform: translate(-50%, -50%);
+  background: transparent;
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  width: 100px;
   border-radius: 50px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   -moz-backdrop-filter: blur(5px);
   box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
+  margin-bottom: 2em;
+  cursor: pointer;
 }
 
-option {
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.label select#offerOrigin {
   color: black;
+  width: 150px;
+}
+
+.label select#offerStatus {
+  color: black;
+  width: 150px;
 }
 
 h2.titleUpdate {
@@ -478,6 +500,8 @@ h2.titleUpdate {
 }
 
 .formOffer {
+  display: flex;
+  flex-direction: column;
   background: rgba(255, 255, 255, 0.3);
   color: white;
   font-size: 20px;
@@ -491,17 +515,9 @@ h2.titleUpdate {
   -moz-backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin: 0 auto;
-  width: 85%;
-  margin-top: 12%;
-}
-
-select#offerStatus {
-  width: 9%;
-}
-
-select#offerOrigin {
-  width: 9%;
+  margin: auto;
+  margin-top: 100px;
+  width: 40%;
 }
 
 .footer {
@@ -579,7 +595,6 @@ a {
   font-size: 18px;
   color: white;
   text-transform: uppercase;
-  text-decoration: underline;
 }
 
 a:hover {
@@ -596,7 +611,6 @@ input {
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1rem;
-  width: 200px;
   border-radius: 50px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -605,6 +619,7 @@ input {
   color: white;
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
   transition: all 0.3s;
   margin-bottom: 2em;
   font-size: 15px;
