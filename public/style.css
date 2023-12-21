@@ -263,7 +263,6 @@ form.containerCreate {
   color: white;
   text-transform: uppercase;
   gap: 30px;
-  margin-top: 5%;
 }
 
 .selectOrigin {
@@ -309,7 +308,11 @@ select#offerStatus {
 #offer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  color: white;
+  text-transform: uppercase;
+  gap: 30px;
 }
 
 h1.title_offer {
@@ -376,7 +379,6 @@ h1.title_offer {
 
 hr {
   width: 30%;
-  margin-bottom: 30px;
 }
 
 .btn_download {
