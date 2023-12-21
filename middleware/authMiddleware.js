@@ -13,10 +13,11 @@ const requireAuth = (req, res, next) => {
 	if (token) {
 		jwt.verify(token, secret, (err, decodedToken) => {
 			if (err) {
-				res.clearCookie("jwt");
+				console.log(err.message);
 				res.redirect("/login");
 			} else {
-				req.user = decodedToken.id;
+				// req.user = decodedToken.id;
+				console.log(decodedToken);
 				next();
 			}
 		});
@@ -46,7 +47,7 @@ const checkUser = (req, res, next) => {
 				let offers = await Offer.find({ author: user._id });
 				res.locals.offers = offers;
 				//console.log(offers, "iciiiiii")
-				
+
 				next();
 			}
 		});
