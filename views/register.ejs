@@ -32,8 +32,9 @@
 
         <button class="btn_Register">Register</button>
 
+
     </form>
-    <p class="errorRegister"><a href="/login">Login</a> if you already have an account.</p>
+    <p class="errorRegister"><a href="/login">Login</a> if you already have an account</p>
 
     <script>
         const form = document.querySelector('form');
@@ -44,8 +45,8 @@
             const lastName = form.lastName.value;
             const email = form.email.value;
             const github = form.github.value;
-            const profilePicture = form.profilePicture.value;
-            const resume = form.resume.value;
+            // const profilePicture = form.profilePicture.value;
+            // const resume = form.resume.value;
             const password = form.password.value;
             // const repeatPassword = form.repeatPassword.value;
 
@@ -54,7 +55,7 @@
                 const res = await fetch("/register", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ firstName, lastName, email, github, profilePicture, resume, password }),
+                    body: JSON.stringify({ firstName, lastName, email, github, password }),
 
                 });
                 const data = await

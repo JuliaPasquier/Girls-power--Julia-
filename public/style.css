@@ -578,6 +578,8 @@ a {
   text-decoration: none;
   font-size: 18px;
   color: white;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 a:hover {
