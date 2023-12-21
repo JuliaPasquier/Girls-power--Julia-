@@ -1,23 +1,23 @@
 <%- include('partials/header'); -%>
 
-<h1 class="title_login">Login</h1>
-    <div class="container_login">
-        <form method="POST">
-           
+        <div class="formLogin">
+            <h1 class="title_login">Login</h1>
+            <form class="form" method="POST">
 
-            <label for="email"></label>
-            <input type="text" name="email" id="email" placeholder="Email"></input>
-            <div class=" email error">
-            </div>
 
-            <label for="password"></label>
-            <input type="password" name="password" id="password" placeholder="Password"></input>
-            <div class="password error"></div>
+                <label for="email"></label>
+                <input type="text" name="email" id="email" placeholder="Email"></input>
 
-            <input type="submit"></input>
-            <a class="btnRegister" href="/register">register</a>
-        </form>
-    </div>
+
+
+                <label for="password"></label>
+                <input type="password" name="password" id="password" placeholder="Password"></input>
+
+
+                <input type="submit"></input>
+                <a class="btnRegister" href="/register">register</a>
+            </form>
+        </div>
 
     <%- include('partials/footer'); -%>
 

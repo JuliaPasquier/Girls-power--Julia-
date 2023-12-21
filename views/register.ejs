@@ -1,36 +1,40 @@
 <%- include('partials/header'); -%>
-    <div class="container_login">
-        <form method="POST">
-            <h2 class="title_register">Register</h2>
+<a class="btnHome" href="/login">home page</a>
 
-            <label for="firstname">firstname</label>
-            <input type="text" name="firstName" required />
 
-            <label for="lastname">lastname</label>
-            <input type="text" name="lastName" required />
+    <h2 class="titleRegister">Register</h2>
+    <form class="formRegister" method="POST">
 
-            <label for="email">email</label>
-            <input type="text" name="email" required />
 
-            <label for="github">github</label>
-            <input type="text" name="github" />
+        <label for="firstname">firstname</label>
+        <input type="text" name="firstName" required />
 
-            <label for="profilePicture">profilePicture</label>
-            <input type="file" name="profilePicture" id="profilePicture" />
+        <label for="lastname">lastname</label>
+        <input type="text" name="lastName" required />
 
-            <label for="resume">CV</label>
-            <input type="file" name="resume" id="resume" />
+        <label for="email">email</label>
+        <input type="text" name="email" required />
 
-            <label for="password">password</label>
-            <input type="password" name="password" required />
+        <label for="github">github</label>
+        <input type="text" name="github" />
 
-            <label for="repeatPassword"> repeat password</label>
-            <input type="password" required />
+        <label for="profilePicture">profilePicture</label>
+        <input type="file" name="profilePicture" id="profilePicture" />
 
-            <button class="btn">Register</button>
-            <a class="btn" href="/login">home page</a>
-        </form>
-    </div>
+        <label for="resume">CV</label>
+        <input type="file" name="resume" id="resume" />
+
+        <label for="password">password</label>
+        <input type="password" name="password" required />
+
+        <label for="repeatPassword"> repeat password</label>
+        <input type="password" required />
+
+        <button class="btn_Register">Register</button>
+
+     
+    </form>
+
 
     <script>
         const form = document.querySelector('form');

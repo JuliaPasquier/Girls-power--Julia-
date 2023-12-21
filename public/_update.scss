@@ -1,18 +1,29 @@
-form.update-offer {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-    width: 75%;
-}
-h2.title_update{
+h2.titleUpdate{
     color: white;
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 40px;
     text-transform: uppercase;
+    margin-top: 2%;
 }
+
+.formOffer {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase ;
+    padding: 3rem;
+    border-radius: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 0 auto; // Center horizontally
+    width: 85%;
+    margin-top: 12%;
+}
+
 
 select#offerStatus {
     width: 9%;

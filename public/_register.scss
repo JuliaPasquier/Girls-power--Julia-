@@ -1,13 +1,62 @@
-.container_register {
-    position: relative;
-    height: 100vh;
-    font-family: arial, sans-serif;
-    align-items: center;
-}
-.btnRegister{
+.titleRegister {
     color: white;
-    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2%;
 }
 
+.formRegister {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase ;
+    padding: 3rem;
+    border-radius: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 0 auto; // Center horizontally
+    width: 75%;
+    margin-top: 12%;
+  
+}
 
+.btn_Register {
+    margin: 0 auto; // Center horizontally
+    display: block; // Make it a block element
+    text-align: center; // Center the text inside the button
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem;
+    width: 100px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    margin-bottom: 2em;
+    cursor:pointer;
+    text-transform: uppercase;
+}
 
+.btn_Register:hover {
+    color: pink;
+    background-color: white;
+    text-transform: uppercase;
+}
+
+.btnHome {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}

@@ -1,47 +1,49 @@
 <%- include('partials/header') %>
 
-<%- include('partials/nav'); %>
+    <%- include('partials/nav'); %>
 
 
-    <div class="container_dashboard">
-        <h1 class="title_dashboard">Dashboard</h1>
-        <a class="btn" href="/create-offer">Create a new job</a>
-
-        <form id="filter-form" action="/filter-offers" method="GET">
-            <label for="filter">Filter by</label>
-            <select name="filter" id="filter">
-                <option value="status">Status</option>
-                <option value="date">Date</option>
-            </select>
-
-            <label for="order">Order</label>
-            <select name="order" id="order">
-                <option value="asc">Asc.</option>
-                <option value="dsc">Dsc.</option>
-            </select>
-            <button class="btn">Filter </button>
-        </form>
-    </div>
+        <div class="index">
+            <h1 class="title_dashboard">Dashboard</h1>
 
 
-    <!-- AFFICHER OFFRES  -->
+            <form id="filter-form" action="/filter-offers" method="GET"> 
+                <a class="btnCreate" href="/create-offer">Create a
+                    new job</a>
+                <label for="filter">Filter by</label>
+                <select name="filter" id="filter">
+                    <option value="status">Status</option>
+                    <option value="date">Date</option>
+                </select>
 
-    <%- include('partials/offers-grid'); %>
+                <label for="order">Order</label>
+                <select name="order" id="order">
+                    <option value="asc">Asc.</option>
+                    <option value="dsc">Dsc.</option>
+                </select>
+                <button class="btn">Filter </button>
+            </form>
+        </div>
 
-        <%- include('partials/footer'); %>
 
-            <script>
-                const filterForm = document.querySelector('#filter-form');
-                const filter = document.querySelector('#filter');
-                const order = document.querySelector('#order');
+        <!-- AFFICHER OFFRES  -->
 
-                filterForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
+        <%- include('partials/offers-grid'); %>
 
-                    const filterValue = filter.value;
-                    const orderValue = order.value;
+            <%- include('partials/footer'); %>
 
-                    // Redirect to index.ejs with new filter parameters
-                    window.location.href = `/?filter=${filterValue}&order=${orderValue}`;
-                })
-            </script>
+                <script>
+                    const filterForm = document.querySelector('#filter-form');
+                    const filter = document.querySelector('#filter');
+                    const order = document.querySelector('#order');
+
+                    filterForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+
+                        const filterValue = filter.value;
+                        const orderValue = order.value;
+
+                        // Redirect to index.ejs with new filter parameters
+                        window.location.href = `/?filter=${filterValue}&order=${orderValue}`;
+                    })
+                </script>

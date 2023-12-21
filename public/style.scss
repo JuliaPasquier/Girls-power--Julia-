@@ -4,36 +4,100 @@
 @import "offers-grid";
 @import "navbar";
 @import "myProfil";
-@import "offer";
+@import "createOffer";
 @import "update";
 @import "footer";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-;
+.container {
+  font-family: arial, sans-serif;
+  background-repeat: no-repeat;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 body {
-    background: linear-gradient(45deg, #fc466b, #3f5efb);
-    font-family: arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 9%;
-
+  background: linear-gradient(45deg, #fc466b, #3f5efb);
+  min-height: 100vh;
 }
-
-;
+.btn {
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  width: 100px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  margin-bottom: 2em;
+}
 
 .btn:hover {
-    color: pink;
-    background-color: white;
-    text-transform: uppercase;
+  color: pink;
+  background-color: white;
+  text-transform: uppercase;
 }
 
-;
+a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+
+a:hover {
+  color: pink;
+}
+
+a:active {
+  text-shadow: none;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  width: 200px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  margin-bottom: 2em;
+  font-size: 15px;
+}
+
+input:hover,
+input[type="text"]:focus,
+input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  width: 150px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+::placeholder {
+  color: #fff;
+}

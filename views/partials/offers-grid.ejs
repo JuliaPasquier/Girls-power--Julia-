@@ -1,24 +1,25 @@
 <% if (offers.length) { %>
-    <div class="grid-container"></div>
+
     <h1 class="title_offers">My Offers</h1>
-
+ <div class="grid-container">
     <% offers.forEach((offer)=> { %>
-        <div class="grid-item">
-            <h2 class="jobTitle">
-                <%= offer.jobTitle %>
-            </h2>
-            <p class="offerName">
-                <%= offer.employerName %>
-            </p>
-            <p class="offerStatus">
-                <%= offer.offerStatus %>
-            </p>
+       
+            <div class="card">
+                <h2 class="jobTitle">
+                    <%= offer.jobTitle %>
+                </h2>
+                <p class="offerName">
+                    <%= offer.employerName %>
+                </p>
+                <p class="offerStatus">
+                    <%= offer.offerStatus %>
+                </p>
 
 
-            <a class="btn" href="/offer/<%= offer._id %>">See More</a>
-        </div>
-        <% }); %>
+                <a class="btn" href="/offer/<%= offer._id %>">See More</a>
             </div>
-            <% } else { %>
-                <p>No offer found.</p>
-                <% } %>
+        <% }); %>
+    </div> 
+<% } else { %>
+    <p>No offer found.</p>
+<% } %>
