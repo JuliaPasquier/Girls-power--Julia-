@@ -254,14 +254,6 @@ form.containerCreate {
   width: 75%;
 }
 
-h2.titleCreate {
-  color: white;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 40px;
-  text-transform: uppercase;
-}
-
 .offer-card {
   display: flex;
   flex-direction: column;
@@ -414,6 +406,16 @@ h1.titleProfil {
   margin-top: 5%;
 }
 
+h2.titleCreate {
+  font-size: 3rem;
+  font-family: "Dhurjati", sans-serif;
+  font-weight: 500;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .formCreate {
   background: rgba(255, 255, 255, 0.3);
   color: white;
@@ -464,10 +466,13 @@ option {
 }
 
 h2.titleUpdate {
+  font-size: 3rem;
+  font-family: "Dhurjati", sans-serif;
+  font-weight: 500;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   text-transform: uppercase;
-  margin-top: 2%;
 }
 
 .formOffer {
@@ -497,20 +502,31 @@ select#offerOrigin {
   width: 9%;
 }
 
-.containerFooter {
+.footer {
   position: fixed;
   bottom: 0;
-  text-align: center;
-}
-
-p.footer {
+  right: 0;
   color: white;
   font-weight: 500;
   opacity: 0.7;
   font-size: 1.4rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.errorLogin {
+  color: WHITE;
+  font-size: 1rem;
+  font-weight: bold;
   text-align: center;
-  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.errorRegister {
+  color: WHITE;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 * {

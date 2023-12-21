@@ -1,23 +1,31 @@
 
+h2.titleCreate {
+    font-size: 3rem;
+    font-family: "Dhurjati", sans-serif;
+    font-weight: 500;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    text-transform: uppercase;
+  }
 
 .formCreate {
-  background: rgba(255, 255, 255, 0.3);
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase ;
-  padding: 3rem;
-  border-radius: 20px;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  margin: 0 auto; // Center horizontally
-  width: 85%;
-  margin-top: 12%;
-
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase ;
+    padding: 3rem;
+    border-radius: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 0 auto; // Center horizontally
+    width: 85%;
+    margin-top: 12%;
 }
 
 .btnCreate {

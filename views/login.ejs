@@ -1,52 +1,46 @@
 <%- include('partials/header'); -%>
 
-        <div class="formLogin">
-            <h1 class="title_login">Login</h1>
-            <form class="form" method="POST">
+<div class="formLogin">
+    <h1 class="title_login">Login</h1>
+
+    <form class="form" method="POST">
+        <label for="email"></label>
+        <input type="text" name="email" id="email" placeholder="Email"></input>
+
+        <label for="password"></label>
+        <input type="password" name="password" id="password" placeholder="Password"></input>
+
+        <input type="submit"></input>
+        <a class="btnRegister" href="/register">register</a>
+    </form>
+    <p class="errorLogin">If you don't have an account<br>please, <a href="/register">register.</a></p>
+
+</div>
 
 
-                <label for="email"></label>
-                <input type="text" name="email" id="email" placeholder="Email"></input>
+<%- include('partials/footer'); -%>
 
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
+        const email = form.email.value;
+        const password = form.password.value;
 
-                <label for="password"></label>
-                <input type="password" name="password" id="password" placeholder="Password"></input>
+        try {
+            const res = await fetch("/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }),
+            });
 
-
-                <input type="submit"></input>
-                <a class="btnRegister" href="/register">register</a>
-            </form>
-        </div>
-
-    <%- include('partials/footer'); -%>
-
-        <script>
-            const form = document.querySelector('form');
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-
-                const email = form.email.value;
-                const password = form.password.value;
-
-                try {
-
-                    const res = await fetch("/login", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ email, password }),
-
-                    });
-
-                    res.json()
-                    if (res.status === 200) {
-                        window.location.href = "/";
-                    }
-                }
-                catch (err) {
-                    console.log(err);
-
-                }
-            })
-
-        </script>
+            res.json()
+            if (res.status === 200) {
+                window.location.href = "/";
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    });
+</script>
