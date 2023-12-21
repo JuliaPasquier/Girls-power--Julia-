@@ -85,10 +85,24 @@
   text-transform: uppercase;
 }
 
-.btnHome {
-  position: absolute;
-  top: 5px;
-  left: 5px;
+input#profilePicture {
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  width: 200px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  margin-bottom: 2em;
+  font-size: 15px;
 }
 
 form#filter-form {
@@ -362,7 +376,7 @@ h1.title_offer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 8%;
+  padding-top: 8%;
   color: white;
   text-transform: uppercase;
   gap: 30px;
@@ -396,21 +410,8 @@ hr {
   text-transform: uppercase;
 }
 
-.btnHome {
-  background: transparent;
-  border: none;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1rem;
-  border-radius: 50px;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  -moz-backdrop-filter: blur(5px);
-  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
-  color: white;
-  font-weight: 500;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
+h1.titleProfil {
+  margin-top: 5%;
 }
 
 .formCreate {
@@ -509,6 +510,7 @@ p.footer {
   font-size: 1.4rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
+  margin: 0 auto;
 }
 
 * {

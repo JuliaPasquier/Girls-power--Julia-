@@ -1,9 +1,9 @@
-.containerFooter{
+.containerFooter {
     position: fixed;
     bottom: 0;
     text-align: center;
-
 }
+
 p.footer {
     color: white;
     font-weight: 500;
@@ -11,4 +11,5 @@ p.footer {
     font-size: 1.4rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
+    margin: 0 auto; // Center the element horizontally
 }
