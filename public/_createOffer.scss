@@ -1,3 +1,4 @@
+
 h2.titleCreate {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
@@ -7,12 +8,14 @@ h2.titleCreate {
   text-align: center;
   text-transform: uppercase;
 }
-.formContainer{
-  display: flex;  
+
+.formContainer {
+  display: flex;
   justify-content: center;
   align-items: center!important;
   place-items: center;
 }
+
 .formCreate {
   display: flex;
   flex-direction: column;
@@ -32,8 +35,11 @@ h2.titleCreate {
   margin: auto; // Center horizontally
   margin-top: 100px;
   width: 40%;
-}
 
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+}
 
 .btnForm {
   transform: translate(-50%, -50%);
@@ -66,11 +72,18 @@ h2.titleCreate {
   margin-bottom: 10px;
 }
 
-.label select#offerOrigin{
+.label select#offerOrigin {
   color: black;
   width: 150px;
 }
-.label select#offerStatus{
+
+.label select#offerStatus {
   color: black;
   width: 150px;
+}
+
+@media (max-width: 768px) {
+  .formCreate {
+    width: 90%;
+  }
 }

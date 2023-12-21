@@ -1,3 +1,4 @@
+
 .titleRegister {
     color: white;
     text-align: center;
@@ -7,24 +8,27 @@
 
 .formRegister {
     display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.3);
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
-  padding: 3rem;
-  border-radius: 20px;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  margin: auto; // Center horizontally
-  margin-top: 100px;
-  width: 40%;
-  
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 3rem;
+    border-radius: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: auto; // Center horizontally
+    margin-top: 100px;
+    width: 40%;
+
+    @media (max-width: 768px) {
+        width: 80%;
+    }
 }
 
 .btn_Register {
@@ -47,8 +51,12 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 0.3s;
     margin-bottom: 2em;
-    cursor:pointer;
+    cursor: pointer;
     text-transform: uppercase;
+
+    @media (max-width: 768px) {
+        width: 80%;
+    }
 }
 
 .btn_Register:hover {
@@ -57,7 +65,7 @@
     text-transform: uppercase;
 }
 
-input#profilePicture{
+input#profilePicture {
     background: transparent;
     border: none;
     border-left: 1px solid rgba(255, 255, 255, 0.3);
@@ -75,4 +83,8 @@ input#profilePicture{
     transition: all 0.3s;
     margin-bottom: 2em;
     font-size: 15px;
+
+    @media (max-width: 768px) {
+        width: 80%;
+    }
 }

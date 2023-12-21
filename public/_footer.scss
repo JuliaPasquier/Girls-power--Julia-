@@ -2,10 +2,14 @@
 .footer {
   position: fixed;
   bottom: 0;
-right: 0;
+  right: 0;
   color: white;
   font-weight: 500;
   opacity: 0.7;
   font-size: 1.4rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 }

@@ -1,3 +1,4 @@
+
 .title_offers {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
@@ -78,11 +79,12 @@ form.containerCreate {
   color: white;
   text-transform: uppercase;
   gap: 30px;
-
 }
+
 .selectOrigin {
   width: 9%;
 }
+
 select#offerOrigin {
   width: 9%;
   padding: 6px;
@@ -99,6 +101,19 @@ select#offerOrigin {
   transition: all 0.3s;
   text-align: center;
   text-transform: uppercase;
+}
+
+// Media queries for responsiveness
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 select#offerStatus {
@@ -118,15 +133,30 @@ select#offerStatus {
   text-align: center;
   text-transform: uppercase;
 }
+
 #offer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-transform: uppercase;
-    gap: 30px;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
 }
+
+// Media queries for responsiveness
+@media screen and (max-width: 768px) {
+  select#offerStatus {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  select#offerStatus {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
 h1.title_offer {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
@@ -137,10 +167,23 @@ h1.title_offer {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 5px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 2rem;
+  }
 }
 
 .btnUpdate {
   display: flex;
   gap: 20px;
   margin-top: 30px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

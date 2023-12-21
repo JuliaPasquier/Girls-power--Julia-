@@ -12,7 +12,7 @@
 }
 
 hr {
-width: 30%;
+    width: 30%;
 }
 
 .btn_download {
@@ -30,10 +30,7 @@ width: 30%;
     border-radius: 10px;
     width: 20vw;
     background-color: transparent;
-
-
 }
-
 
 .btn_download:hover {
     color: pink;
@@ -41,10 +38,25 @@ width: 30%;
     text-transform: uppercase;
 }
 
-// .btn_profil{
-//     margin-bottom: 50px;
-// }
-
 h1.titleProfil {
     margin-top: 5%;
+}
+
+// Media queries for responsiveness
+@media screen and (max-width: 768px) {
+    .myProfil {
+        padding-top: 4%;
+    }
+
+    hr {
+        width: 50%;
+    }
+
+    .btn_download {
+        width: 40vw;
+    }
+
+    h1.titleProfil {
+        margin-top: 3%;
+    }
 }
