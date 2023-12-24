@@ -6,13 +6,15 @@
     justify-content: center;
     align-items: center;
     padding-top: 8%;
-    color: white;
+    color:black;
     text-transform: uppercase;
     gap: 30px;  
 }
 
 hr {
     width: 30%;
+    margin-bottom: 30px;    
+    border: solid 1px black;
 }
 
 .btn_download {
@@ -32,11 +34,6 @@ hr {
     background-color: transparent;
 }
 
-.btn_download:hover {
-    color: pink;
-    background-color: white;
-    text-transform: uppercase;
-}
 
 h1.titleProfil {
     margin-top: 5%;

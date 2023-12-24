@@ -23,12 +23,14 @@
 }
 
 body {
-  background: linear-gradient(45deg, #fc466b, #3f5efb);
+  // background: linear-gradient(45deg, #fc466b, #3f5efb);*
+  background-color:wheat;
   min-height: 100vh;
 }
 
 .btn {
-  background: transparent;
+  background:rgba(26, 24, 24, 0.524);  
+  color:rgb(255, 255, 255);
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -39,28 +41,22 @@ body {
   -webkit-backdrop-filter: blur(5px);
   -moz-backdrop-filter: blur(5px);
   box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
-  color: white;
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
-  margin-bottom: 2em;
 }
 
 .btn:hover {
-  color: pink;
+  color: black;
   background-color: white;
   text-transform: uppercase;
 }
 
-a {
-  text-decoration: none;
-  font-size: 18px;
-  color: white;
-  text-transform: uppercase;
-}
+
 
 a:hover {
-  color: pink;
+  color:white;
+  border: 2px solid black
 }
 
 a:active {
@@ -68,7 +64,7 @@ a:active {
 }
 
 input {
-  background: transparent;
+  background: wheat;
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -78,7 +74,7 @@ input {
   -webkit-backdrop-filter: blur(5px);
   -moz-backdrop-filter: blur(5px);
   box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
-  color: white;
+  color: black;
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -90,7 +86,7 @@ input {
 input:hover,
 input[type="text"]:focus,
 input[type="text"]:focus {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(19, 18, 18, 0.1);
   box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
 }
 

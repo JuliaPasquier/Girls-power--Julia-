@@ -8,7 +8,7 @@ form#filter-form {
   color: white;
   gap: 20px;
   align-items: center;
-  background: rgba(255, 255, 255, 0.3);
+  background-color: rgba(1, 1, 1, 0.3);
   padding: 3rem;
   border-radius: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
@@ -34,25 +34,12 @@ form#filter-form {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
   font-weight: 500;
-  color: white;
+  color: black;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   text-transform: uppercase;
 }
 
-button.btn {
-  text-align: center;
-  text-transform: uppercase;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  margin: 0;
-  padding: 9px;
-
-  @media (max-width: 768px) {
-    padding: 0.5rem;
-  }
-}
 
 select#order,
 select#filter {
@@ -60,7 +47,7 @@ select#filter {
   border-radius: 10px;
   width: 9vw;
   padding: 6px;
-  background: rgba(255, 255, 255, 0.3);
+  background:rgba(0, 0, 0, 0.564);  
   color: white;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -82,7 +69,7 @@ option {
 }
 
 .btnCreateOffer {
-  background: transparent;
+  background: rgba(26, 24, 24, 0.524);
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);

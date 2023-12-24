@@ -3,7 +3,7 @@
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
   font-weight: 500;
-  color: white;
+  color: rgba(0, 0, 0, 0.627);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
   text-transform: uppercase;
@@ -20,7 +20,7 @@
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(1, 1, 1, 0.3);
   border-radius: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -35,7 +35,7 @@
 .jobTitle {
   font-size: 2rem;
   font-weight: 500;
-  color: white;
+  color: black;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
 }
@@ -65,7 +65,7 @@ form.containerCreate {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: black;
   text-transform: uppercase;
   width: 75%;
 }
@@ -76,7 +76,7 @@ form.containerCreate {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: black;
   text-transform: uppercase;
   gap: 30px;
 }
@@ -86,10 +86,8 @@ form.containerCreate {
 }
 
 select#offerOrigin {
-  width: 9%;
   padding: 6px;
   background: rgba(255, 255, 255, 0.3);
-  color: white;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50px;
@@ -161,7 +159,7 @@ h1.title_offer {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
   font-weight: 500;
-  color: white;
+  color: black;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin-top: 8%;
   text-transform: uppercase;

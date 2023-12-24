@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Dhurjati&family=Indie+Flower&family=Inter:wght@400;800&family=Pacifico&family=Pixelify+Sans:wght@400;600&family=Preahvihear&family=Raleway&family=Roboto&display=swap");
 .formLogin {
-  background: rgba(255, 255, 255, 0.3);
+  background-color: rgba(1, 1, 1, 0.3);
   padding: 3rem;
   border-radius: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
@@ -11,17 +11,13 @@
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
   font-size: 20px;
-  width: 40vw;
+  width: 20vw;
   margin: 0 auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-@media (max-width: 768px) {
-  .formLogin {
-    width: 80vw;
-  }
+  cursor: pointer;
 }
 
 .loginForm {
@@ -40,6 +36,15 @@
   margin-bottom: 20px;
   text-align: center;
   margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  border: 2px solid black;
+  background-color: black;
+  border-radius: 6px;
 }
 
 .titleRegister {
@@ -144,7 +149,7 @@ form#filter-form {
   color: white;
   gap: 20px;
   align-items: center;
-  background: rgba(255, 255, 255, 0.3);
+  background-color: rgba(1, 1, 1, 0.3);
   padding: 3rem;
   border-radius: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
@@ -170,25 +175,10 @@ form#filter-form {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
   font-weight: 500;
-  color: white;
+  color: black;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   text-transform: uppercase;
-}
-
-button.btn {
-  text-align: center;
-  text-transform: uppercase;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  margin: 0;
-  padding: 9px;
-}
-@media (max-width: 768px) {
-  button.btn {
-    padding: 0.5rem;
-  }
 }
 
 select#order,
@@ -197,7 +187,7 @@ select#filter {
   border-radius: 10px;
   width: 9vw;
   padding: 6px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.564);
   color: white;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -223,7 +213,7 @@ option {
 }
 
 .btnCreateOffer {
-  background: transparent;
+  background: rgba(26, 24, 24, 0.524);
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -258,7 +248,7 @@ option {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
   font-weight: 500;
-  color: white;
+  color: rgba(0, 0, 0, 0.627);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
   text-transform: uppercase;
@@ -275,7 +265,7 @@ option {
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(1, 1, 1, 0.3);
   border-radius: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -290,7 +280,7 @@ option {
 .jobTitle {
   font-size: 2rem;
   font-weight: 500;
-  color: white;
+  color: black;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
 }
@@ -322,7 +312,7 @@ form.containerCreate {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: black;
   text-transform: uppercase;
   width: 75%;
 }
@@ -333,7 +323,7 @@ form.containerCreate {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: black;
   text-transform: uppercase;
   gap: 30px;
 }
@@ -343,10 +333,8 @@ form.containerCreate {
 }
 
 select#offerOrigin {
-  width: 9%;
   padding: 6px;
   background: rgba(255, 255, 255, 0.3);
-  color: white;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50px;
@@ -412,7 +400,7 @@ h1.title_offer {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
   font-weight: 500;
-  color: white;
+  color: black;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin-top: 8%;
   text-transform: uppercase;
@@ -467,13 +455,13 @@ h1.title_offer {
 
 .logo {
   left: 0;
-  color: white;
+  color: black;
   font-size: 20px;
   text-transform: uppercase;
 }
 
 .username {
-  color: white;
+  color: black;
   text-transform: uppercase;
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -482,36 +470,21 @@ h1.title_offer {
   font-size: 20px;
 }
 
-.burger-menu {
-  display: none;
-}
-@media (max-width: 768px) {
-  .burger-menu {
-    display: block;
-    cursor: pointer;
-  }
-}
-
-.burger-menu-icon {
-  width: 30px;
-  height: 3px;
-  background-color: white;
-  margin: 5px;
-}
-
 .myProfil {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 8%;
-  color: white;
+  color: black;
   text-transform: uppercase;
   gap: 30px;
 }
 
 hr {
   width: 30%;
+  margin-bottom: 30px;
+  border: solid 1px black;
 }
 
 .btn_download {
@@ -529,12 +502,6 @@ hr {
   border-radius: 10px;
   width: 20vw;
   background-color: transparent;
-}
-
-.btn_download:hover {
-  color: pink;
-  background-color: white;
-  text-transform: uppercase;
 }
 
 h1.titleProfil {
@@ -559,7 +526,7 @@ h2.titleCreate {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
   font-weight: 500;
-  color: white;
+  background: rgba(0, 0, 0, 0.564);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   text-transform: uppercase;
@@ -575,7 +542,7 @@ h2.titleCreate {
 .formCreate {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.3);
+  background-color: rgba(1, 1, 1, 0.3);
   color: white;
   font-size: 20px;
   text-transform: uppercase;
@@ -600,7 +567,7 @@ h2.titleCreate {
 
 .btnForm {
   transform: translate(-50%, -50%);
-  background: transparent;
+  background: black;
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -630,12 +597,14 @@ h2.titleCreate {
 }
 
 .label select#offerOrigin {
-  color: black;
+  color: white;
+  background: rgba(26, 24, 24, 0.524);
   width: 150px;
 }
 
 .label select#offerStatus {
-  color: black;
+  color: white;
+  background: rgba(26, 24, 24, 0.524);
   width: 150px;
 }
 
@@ -644,11 +613,15 @@ h2.titleCreate {
     width: 90%;
   }
 }
+label.labelTitle {
+  margin-bottom: 5px;
+}
+
 h2.titleUpdate {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
   font-weight: 500;
-  color: white;
+  color: black;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   text-transform: uppercase;
@@ -657,31 +630,30 @@ h2.titleUpdate {
 .formOffer {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.3);
+  background-color: rgba(1, 1, 1, 0.3);
   color: white;
   font-size: 20px;
   text-transform: uppercase;
   padding: 3rem;
   border-radius: 20px;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
   margin: auto;
-  margin-top: 100px;
-  width: 40%;
+  margin-top: 2%;
+  width: 30vw;
 }
 @media screen and (max-width: 768px) {
   .formOffer {
-    width: 80%;
+    width: 80vw;
   }
 }
 @media screen and (max-width: 480px) {
   .formOffer {
-    width: 90%;
+    width: 90vw;
     padding: 2rem;
   }
 }
@@ -704,7 +676,7 @@ h2.titleUpdate {
 
 .errorLogin {
   color: WHITE;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1rem;
@@ -744,12 +716,13 @@ h2.titleUpdate {
 }
 
 body {
-  background: linear-gradient(45deg, #fc466b, #3f5efb);
+  background-color: wheat;
   min-height: 100vh;
 }
 
 .btn {
-  background: transparent;
+  background: rgba(26, 24, 24, 0.524);
+  color: rgb(255, 255, 255);
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -760,28 +733,20 @@ body {
   -webkit-backdrop-filter: blur(5px);
   -moz-backdrop-filter: blur(5px);
   box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
-  color: white;
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
-  margin-bottom: 2em;
 }
 
 .btn:hover {
-  color: pink;
+  color: black;
   background-color: white;
   text-transform: uppercase;
 }
 
-a {
-  text-decoration: none;
-  font-size: 18px;
-  color: white;
-  text-transform: uppercase;
-}
-
 a:hover {
-  color: pink;
+  color: white;
+  border: 2px solid black;
 }
 
 a:active {
@@ -789,7 +754,7 @@ a:active {
 }
 
 input {
-  background: transparent;
+  background: wheat;
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -799,7 +764,7 @@ input {
   -webkit-backdrop-filter: blur(5px);
   -moz-backdrop-filter: blur(5px);
   box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
-  color: white;
+  color: black;
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -811,7 +776,7 @@ input {
 input:hover,
 input[type=text]:focus,
 input[type=text]:focus {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(19, 18, 18, 0.1);
   box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
 }
 

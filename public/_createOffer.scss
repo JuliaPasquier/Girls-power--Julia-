@@ -1,9 +1,8 @@
-
 h2.titleCreate {
   font-size: 3rem;
   font-family: "Dhurjati", sans-serif;
   font-weight: 500;
-  color: white;
+  background: rgba(0, 0, 0, 0.564);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   text-transform: uppercase;
@@ -12,14 +11,14 @@ h2.titleCreate {
 .formContainer {
   display: flex;
   justify-content: center;
-  align-items: center!important;
+  align-items: center !important;
   place-items: center;
 }
 
 .formCreate {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.3);
+  background-color: rgba(1, 1, 1, 0.3);
   color: white;
   font-size: 20px;
   text-transform: uppercase;
@@ -43,7 +42,7 @@ h2.titleCreate {
 
 .btnForm {
   transform: translate(-50%, -50%);
-  background: transparent;
+  background: black;
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -73,12 +72,14 @@ h2.titleCreate {
 }
 
 .label select#offerOrigin {
-  color: black;
+  color: white;
+  background: rgba(26, 24, 24, 0.524);
   width: 150px;
 }
 
 .label select#offerStatus {
-  color: black;
+  color: white;
+  background: rgba(26, 24, 24, 0.524);
   width: 150px;
 }
 
@@ -86,4 +87,8 @@ h2.titleCreate {
   .formCreate {
     width: 90%;
   }
+}
+
+label.labelTitle {
+  margin-bottom: 5px;
 }

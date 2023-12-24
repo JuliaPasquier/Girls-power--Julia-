@@ -3,7 +3,7 @@ h2.titleUpdate {
     font-size: 3rem;
     font-family: "Dhurjati", sans-serif;
     font-weight: 500;
-    color: white;
+    color: black;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
     text-transform: uppercase;
@@ -12,29 +12,29 @@ h2.titleUpdate {
 .formOffer {
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.3);
+    background-color: rgba(1, 1, 1, 0.3);
     color: white;
     font-size: 20px;
     text-transform: uppercase;
     padding: 3rem;
     border-radius: 20px;
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     -moz-backdrop-filter: blur(10px);
     box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
     text-align: center;
     margin: auto; // Center horizontally
-    margin-top: 100px;
-    width: 40%;
+    margin-top: 2%;
+    width: 30vw;
+
 
     @media screen and (max-width: 768px) {
-        width: 80%;
+        width: 80vw;
     }
 
     @media screen and (max-width: 480px) {
-        width: 90%;
+        width: 90vw;
         padding: 2rem;
     }
 }
