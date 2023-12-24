@@ -7,27 +7,27 @@
 
         <form class="formOffer" method="POST">
 
-            <label class="title" for="jobTitle">Job Title</label>
+            <label class="labelTitle" class="title" for="jobTitle">Job Title</label>
             <input type="text" name="jobTitle" value="<%= offer.jobTitle %>" required />
 
 
-            <label class="title" for="url">Website</label>
+            <label class="labelTitle" class="title" for="url">Website</label>
             <input type="text" name="url" value="<%= offer.url %>" required />
 
 
-            <label class="title" for="employerName">Name</label>
+            <label class="labelTitle" class="title" for="employerName">Name</label>
             <input type="text" name="employerName" value="<%= offer.employerName %>" required />
 
 
-            <label class="title" for="employerEmail">Email</label>
+            <label class="labelTitle" class="title" for="employerEmail">Email</label>
             <input type="text" name="employerEmail" value="<%= offer.employerEmail %>" required />
 
 
-            <label class="title" for="employerPhone">Phone</label>
+            <label class="labelTitle" class="title" for="employerPhone">Phone</label>
             <input type="text" name="employerPhone" value="<%= offer.employerPhone %>" />
 
 
-            <label class="title" for="employerAddress">Address</label>
+            <label class="labelTitle" class="title" for="employerAddress">Address</label>
             <input type="text" name="employerAddress" value="<%= offer.employerAddress %>" />
 
             <div class="label">
@@ -48,7 +48,7 @@
                 </select>
             </div>
 
-            <label class="title" for="comments">Comments</label>
+            <label class="labelTitle" for="comments">Comments</label>
             <input type="text" name="comments" value="<%= offer.comments %>" /> <br>
             <div class="btnCreate">
                 <input class="btn" type="submit" value="Enregistrer" />

@@ -86,6 +86,7 @@ option {
   transition: all 0.3s;
   cursor: pointer;
   text-transform: uppercase;
+  text-decoration: none;
 
   @media (max-width: 768px) {
     padding: 0.5rem;
