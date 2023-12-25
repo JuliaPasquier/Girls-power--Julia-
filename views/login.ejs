@@ -6,7 +6,7 @@
         <div class="loginForm">
             <form class="form" method="POST">
                 <label for="email"></label>
-                <input type="text" name="email" id="email" placeholder="Email">
+                <input type="text" name="email" id="email" placeholder="Email"></input>
 
                 <label for="password"></label>
                 <input type="password" name="password" id="password" placeholder="Password">
@@ -40,8 +40,11 @@
                     if (res.status === 200) {
                         window.location.href = "/";
                     }
-                } catch (err) {
+                } 
                 
+                catch (err) {
+                
+        
                 }
             });
         </script>
