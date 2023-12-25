@@ -2,20 +2,20 @@
     <!-- <a class="btn" href="/login">home page</a> -->
 
 
-    <h2 class="titleRegister">Register</h2>
-    <form class="formRegister" method="POST">
+    <h2 class="titleUpdate">Register</h2>
+    <form class="formCreate" method="POST">
 
 
-        <label for="firstname">firstname</label>
+        <label class="labelTitle" for="firstname">firstname</label>
         <input type="text" name="firstName" required />
 
-        <label for="lastname">lastname</label>
+        <label class="labelTitle"  for="lastname">lastname</label>
         <input type="text" name="lastName" required />
 
-        <label for="email">email</label>
+        <label class="labelTitle"  for="email">email</label>
         <input type="text" name="email" required />
 
-        <label for="github">github</label>
+        <label class="labelTitle"  for="github">github</label>
         <input type="text" name="github" /><br>
 
         <!-- <label for="profilePicture">profilePicture</label>
@@ -24,17 +24,17 @@
         <label for="resume">CV</label>
         <input type="file" name="resume" id="resume" /> -->
 
-        <label for="password">password</label>
+        <label class="labelTitle" for="password">password</label>
         <input type="password" name="password" required />
 
-        <label for="repeatPassword"> repeat password</label>
+        <label class="labelTitle"  for="repeatPassword"> repeat password</label>
         <input type="password" required />
 
         <button class="btn_Register">Register</button>
 
-
+        <p class="errorRegister"><a href="/login">Login</a> if you already have an account</p>
     </form>
-    <p class="errorRegister"><a href="/login">Login</a> if you already have an account</p>
+    
 
     <script>
         const form = document.querySelector('form');
