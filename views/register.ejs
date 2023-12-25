@@ -4,18 +4,21 @@
 
     <h2 class="titleUpdate">Register</h2>
     <form class="formCreate" method="POST">
+        <div class="asterixRequired">
+            <p class="asterix">fields with a * are required
+            </p>
+    </div>
 
-
-        <label class="labelTitle" for="firstname">firstname</label>
+        <label class="labelTitle" for="firstname">firstname*</label>
         <input type="text" name="firstName" required />
 
-        <label class="labelTitle"  for="lastname">lastname</label>
+        <label class="labelTitle" for="lastname">lastname*</label>
         <input type="text" name="lastName" required />
 
-        <label class="labelTitle"  for="email">email</label>
+        <label class="labelTitle" for="email">email*</label>
         <input type="text" name="email" required />
 
-        <label class="labelTitle"  for="github">github</label>
+        <label class="labelTitle" for="github">github</label>
         <input type="text" name="github" /><br>
 
         <!-- <label for="profilePicture">profilePicture</label>
@@ -24,17 +27,17 @@
         <label for="resume">CV</label>
         <input type="file" name="resume" id="resume" /> -->
 
-        <label class="labelTitle" for="password">password</label>
+        <label class="labelTitle" for="password">password*</label>
         <input type="password" name="password" required />
 
-        <label class="labelTitle"  for="repeatPassword"> repeat password</label>
+        <label class="labelTitle" for="repeatPassword"> repeat password*</label>
         <input type="password" required />
 
         <button class="btn_Register">Register</button>
 
         <p class="errorRegister"><a href="/login">Login</a> if you already have an account</p>
     </form>
-    
+
 
     <script>
         const form = document.querySelector('form');
@@ -69,7 +72,7 @@
                 }
             }
             catch (err) {
-                console.log(err);
+
 
             }
         })

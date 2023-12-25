@@ -13,11 +13,11 @@ const requireAuth = (req, res, next) => {
 	if (token) {
 		jwt.verify(token, secret, (err, decodedToken) => {
 			if (err) {
-				console.log(err.message);
+
 				res.redirect("/login");
 			} else {
 				req.user = decodedToken.id;
-				console.log(decodedToken);
+
 				next();
 			}
 		});
@@ -30,24 +30,24 @@ const requireAuth = (req, res, next) => {
 // check current user
 const checkUser = (req, res, next) => {
 	const token = req.cookies.jwt;
-	//console.log('blue')
+
 	if (token) {
-		//console.log("vert");
+
 		jwt.verify(token, secret, async (err, decodedToken) => {
 			if (err) {
-				//console.log('jaune')
+
 				res.locals.user = null;
 				next();
-			} 
+			}
 			else {
-				//console.log("rouge")
+
 				let user = await User.findById(decodedToken.id);
-				//console.log("bleu")
+
 				res.locals.user = user;
-				//console.log(user, "user")
+
 				let offers = await Offer.find({ author: user._id });
 				res.locals.offers = offers;
-				//console.log(offers, "iciiiiii")
+
 
 				next();
 			}

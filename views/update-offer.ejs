@@ -15,7 +15,7 @@
             <input type="text" name="url" value="<%= offer.url %>" required />
 
 
-            <label class="labelTitle" class="title" for="employerName">Name</label>
+            <label class="labelTitle" class="title" for="employerName">employeur Name</label>
             <input type="text" name="employerName" value="<%= offer.employerName %>" required />
 
 
@@ -73,9 +73,9 @@
                     const offerOrigin = form.offerOrigin.value;
                     const offerStatus = form.offerStatus.value;
                     const comments = form.comments.value;
-                    console.log("Je suis dans l'event listner")
+
                     try {
-                        console.log("Je lance le post")
+
                         const res = await fetch("/update-offer", {
                             method: "POST",
                             body: JSON.stringify({ jobTitle, url, employerName, employerEmail, employerPhone, employerAddress, offerOrigin, offerStatus, comments }),
@@ -87,7 +87,7 @@
                         }
                     }
                     catch (err) {
-                        console.log(err);
+
 
                     }
                 });
@@ -108,7 +108,7 @@
                             window.location.href = "/";
                         }
                     } catch (err) {
-                        console.log(err);
+
                     }
                 });
             </script>

@@ -1,58 +1,62 @@
 <%- include('partials/header') %>
 
-     
+
         <%- include('partials/nav') %>
 
 
-<h2 class="titleUpdate">Create Offers</h2>
+                <h2 class="titleUpdate">Create Offers</h2>
                 <!-- <div class="formContainer"> -->
-                        <form class="formOffer" method="POST">
+                <form class="formOffer" method="POST">
+                        <div class="asterixRequired">
+                                <p class="asterix">fields with a * are required
+                                </p>
+                        </div>
+
+                        <label class="labelTitle" for="jobTitle">job title*</label>
+                        <input id="jobTitle" type="text" name="jobTitle" required />
+
+                        <label class="labelTitle" for="url">Website*</label>
+                        <input id="url" type="text" name="url" required />
+
+                        <label class="labelTitle" for="employerName">employer name*</label>
+                        <input id="employerName" type="text" name="employerName" required />
+
+                        <label class="labelTitle" for="employerEmail">email*</label>
+                        <input id="employerEmail" type="text" name="employerEmail" required />
+
+                        <label class="labelTitle" for="employerPhone">phone</label>
+                        <input id="employerPhone" type="text" name="employerPhone" />
+
+                        <label class="labelTitle" for="employerAddress">address</label>
+                        <input id="employerAddress" type="text" name="employerAddress" />
+
+                        <div class="label">
+                                <label class="title" for="offerOrigin">Origin</label>
+                                <select id="offerOrigin">
+                                        <option value="poleEmploi">linkedin</option>
+                                        <option value="indeed">indeed</option>
+                                        <option value="linkedin">forem</option>
+                                        <option value="autre">autre</option>
+                                </select>
+                                <label class="title" for="offerStatus">Status</label>
+                                <select id="offerStatus">
+                                        <option value="pending">pending</option>
+                                        <option value="accepted">accepted</option>
+                                        <option value="refused">refused</option>
+                                </select>
+                        </div>
+
+                        <label class="labelTitle" for="comments">comments</label>
+                        <input id="comments" type="text" name="comments" /><br>
+                        <div class="btnCreate">
+                                <input class="btn" type="submit" value="Envoyer" />
+                        </div>
 
 
-                                <label class="labelTitle" for="jobTitle">title</label>
-                                <input id="jobTitle" type="text" name="jobTitle" required />
+                        <!-- <a class="btn" href="/" type="submit" value="Envoyer">envoyer</a> -->
 
-                                <label class="labelTitle" for="url">url</label>
-                                <input id="url" type="text" name="url" required />
-
-                                <label class="labelTitle" for="employerName">employer name</label>
-                                <input id="employerName" type="text" name="employerName" required />
-
-                                <label class="labelTitle" for="employerEmail">email</label>
-                                <input id="employerEmail" type="text" name="employerEmail" required />
-
-                                <label class="labelTitle" for="employerPhone">phone</label>
-                                <input id="employerPhone" type="text" name="employerPhone" />
-
-                                <label class="labelTitle" for="employerAddress">address</label>
-                                <input id="employerAddress" type="text" name="employerAddress" />
-
-                                <div class="label">
-                                        <label class="title" for="offerOrigin">Origin</label>
-                                        <select id="offerOrigin">
-                                                <option value="poleEmploi">linkedin</option>
-                                                <option value="indeed">indeed</option>
-                                                <option value="linkedin">forem</option>
-                                                <option value="autre">autre</option>
-                                        </select>
-                                        <label class="title" for="offerStatus">Status</label>
-                                        <select id="offerStatus">
-                                                <option value="pending">pending</option>
-                                                <option value="accepted">accepted</option>
-                                                <option value="refused">refused</option>
-                                        </select>
-                                </div>
-
-                                <label class="labelTitle" for="comments">comments</label>
-                                <input id="comments" type="text" name="comments" /><br>
-                                <div class="btnCreate">
-                                        <input class="btn" type="submit" value="Envoyer" />
-                                </div>
-
-
-                                <!-- <a class="btn" href="/" type="submit" value="Envoyer">envoyer</a> -->
-
-                        </form>
+                </form>
+            
                 <!-- </div> -->
 
 
