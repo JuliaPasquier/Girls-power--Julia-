@@ -41,9 +41,13 @@
 }
 
 
-  .linkRegister {
-    text-decoration: underline;
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-  }
+.linkRegister {
+  text-decoration: underline;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+input#email {
+  background-color: wheat;
+}
